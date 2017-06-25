@@ -30,6 +30,11 @@ namespace membership_system
             {
                 insertStudentData = false;
                 MessageBox.Show("Please fill all the field for student data! ");
+
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "Please fill all the field for student data! ";
+                
             }
             else
             {
@@ -82,7 +87,10 @@ namespace membership_system
 
                 displayAllField(); // display all the data
                 clearField(); // clear text field 
-                MessageBox.Show("Member information insert successfully ! ");
+
+                // return success message
+                messageText.ForeColor = System.Drawing.Color.Green;
+                messageText.Text = "Member information insert successfully ! ";
 
             }           
         }
@@ -90,11 +98,11 @@ namespace membership_system
         //dataGridView1 RowHeaderMouseClick Event  
         private void memberGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            studentNameTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            studentNameTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            studenthpTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             studentEmailTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            studenthpTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-            studentGenderCombobox.Text = memberGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            intakeCodeTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            studentGenderCombobox.Text = memberGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            intakeCodeTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
 
         // display data in datagridview base on query
@@ -125,6 +133,41 @@ namespace membership_system
             query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from dbo.Student where student_name like '%" +
                 searchTextbox.Text + "%'";
             displayData(query);
+        }
+
+        // clear search result and display all data 
+        private void clearSearchButton_Click(object sender, EventArgs e)
+        {
+            searchTextbox.Text = "";
+            displayAllField();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            validateEmptyField();
+            if (insertStudentData)
+            {
+                Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
+                    studentGenderCombobox.Text, intakeCodeTextbox.Text);
+
+
+                SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = "insert into dbo.Student values ('" + member.getName() + "'," + member.getHP() + ",'"
+                    + member.getEmail() + "','" + member.getGender() + "','" + member.getIntakeCode() + "')";
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                connect.close();
+
+                displayAllField(); // display all the data
+                clearField(); // clear text field 
+
+                             
+
+            }
+
         }
     }
 }
