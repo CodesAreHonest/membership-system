@@ -169,5 +169,11 @@ namespace membership_system
             }
 
         }
+
+        private void mDashboardButton_Click(object sender, EventArgs e)
+        {
+            MemberDashboard mb = new MemberDashboard();
+            mb.ShowDialog();
+        }
     }
 }

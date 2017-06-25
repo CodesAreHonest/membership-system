@@ -42,6 +42,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.memberPanel = new System.Windows.Forms.Panel();
+            this.mDashboardButton = new System.Windows.Forms.Button();
             this.memberStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.button4 = new System.Windows.Forms.Button();
@@ -213,6 +214,7 @@
             // 
             this.memberPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.memberPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.memberPanel.Controls.Add(this.mDashboardButton);
             this.memberPanel.Controls.Add(this.memberStrip);
             this.memberPanel.Controls.Add(this.button4);
             this.memberPanel.Controls.Add(this.viewMemberButton);
@@ -221,6 +223,18 @@
             this.memberPanel.Name = "memberPanel";
             this.memberPanel.Size = new System.Drawing.Size(653, 211);
             this.memberPanel.TabIndex = 8;
+            // 
+            // mDashboardButton
+            // 
+            this.mDashboardButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.mDashboardButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mDashboardButton.Location = new System.Drawing.Point(388, 55);
+            this.mDashboardButton.Name = "mDashboardButton";
+            this.mDashboardButton.Size = new System.Drawing.Size(214, 40);
+            this.mDashboardButton.TabIndex = 10;
+            this.mDashboardButton.Text = "Manage Member";
+            this.mDashboardButton.UseVisualStyleBackColor = false;
+            this.mDashboardButton.Click += new System.EventHandler(this.mDashboardButton_Click);
             // 
             // memberStrip
             // 
@@ -529,5 +543,6 @@
         private System.Windows.Forms.Button manageMember;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button mDashboardButton;
     }
 }
