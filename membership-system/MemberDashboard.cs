@@ -44,8 +44,7 @@ namespace membership_system
 
         private void MemberDashboard_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_membership_system_dbDataSet.Student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this._membership_system_dbDataSet.Student);
+            displayAllField();
 
         }
 

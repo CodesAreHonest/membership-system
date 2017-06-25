@@ -56,7 +56,6 @@ C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.exe
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.pdb
 C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system.exe
 C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system.pdb
-C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csprojResolveAssemblyReference.cache
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.AddMember.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.ClubFees.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.ClubRegistration.resources

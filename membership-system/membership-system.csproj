@@ -176,11 +176,6 @@
     <Compile Include="ViewMember.Designer.cs">
       <DependentUpon>ViewMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="_membership_system_dbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_membership_system_dbDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddMember.resx">
       <DependentUpon>AddMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,17 +248,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="_membership_system_dbDataSet.xsc">
-      <DependentUpon>_membership_system_dbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_membership_system_dbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_membership_system_dbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_membership_system_dbDataSet.xss">
-      <DependentUpon>_membership_system_dbDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

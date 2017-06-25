@@ -50,27 +50,19 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextbox = new System.Windows.Forms.TextBox();
             this.searchNameLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.memberGridView = new System.Windows.Forms.DataGridView();
-            this.studentnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studenthandphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentgenderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentintakecodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._membership_system_dbDataSet = new membership_system._membership_system_dbDataSet();
-            this.studentTableAdapter = new membership_system._membership_system_dbDataSetTableAdapters.StudentTableAdapter();
             this.messageGroupbox = new System.Windows.Forms.GroupBox();
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.memberGridView = new System.Windows.Forms.DataGridView();
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._membership_system_dbDataSet)).BeginInit();
             this.messageGroupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // registerStrip
@@ -85,7 +77,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(1593, 43);
+            this.registerStrip.Size = new System.Drawing.Size(1881, 43);
             this.registerStrip.TabIndex = 3;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -116,7 +108,7 @@
             this.groupBox1.Controls.Add(this.fullnameLabel);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(27, 181);
+            this.groupBox1.Location = new System.Drawing.Point(98, 228);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(558, 388);
             this.groupBox1.TabIndex = 5;
@@ -261,7 +253,7 @@
             this.groupBox2.Controls.Add(this.searchTextbox);
             this.groupBox2.Controls.Add(this.searchNameLabel);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(667, 66);
+            this.groupBox2.Location = new System.Drawing.Point(761, 70);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(827, 92);
             this.groupBox2.TabIndex = 6;
@@ -311,96 +303,12 @@
             this.searchNameLabel.TabIndex = 22;
             this.searchNameLabel.Text = "Student Name: ";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.memberGridView);
-            this.panel1.Location = new System.Drawing.Point(625, 181);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 523);
-            this.panel1.TabIndex = 7;
-            // 
-            // memberGridView
-            // 
-            this.memberGridView.AllowUserToAddRows = false;
-            this.memberGridView.AllowUserToDeleteRows = false;
-            this.memberGridView.AllowUserToOrderColumns = true;
-            this.memberGridView.AutoGenerateColumns = false;
-            this.memberGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.memberGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentnameDataGridViewTextBoxColumn,
-            this.studenthandphoneDataGridViewTextBoxColumn,
-            this.studentemailDataGridViewTextBoxColumn,
-            this.studentgenderDataGridViewTextBoxColumn,
-            this.studentintakecodeDataGridViewTextBoxColumn});
-            this.memberGridView.DataSource = this.studentBindingSource;
-            this.memberGridView.Location = new System.Drawing.Point(3, 3);
-            this.memberGridView.Name = "memberGridView";
-            this.memberGridView.ReadOnly = true;
-            this.memberGridView.RowTemplate.Height = 24;
-            this.memberGridView.Size = new System.Drawing.Size(902, 517);
-            this.memberGridView.TabIndex = 0;
-            this.memberGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.memberGridView_RowHeaderMouseClick);
-            // 
-            // studentnameDataGridViewTextBoxColumn
-            // 
-            this.studentnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentnameDataGridViewTextBoxColumn.DataPropertyName = "student_name";
-            this.studentnameDataGridViewTextBoxColumn.HeaderText = "Student Name ";
-            this.studentnameDataGridViewTextBoxColumn.Name = "studentnameDataGridViewTextBoxColumn";
-            this.studentnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studenthandphoneDataGridViewTextBoxColumn
-            // 
-            this.studenthandphoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studenthandphoneDataGridViewTextBoxColumn.DataPropertyName = "student_handphone";
-            this.studenthandphoneDataGridViewTextBoxColumn.HeaderText = "Handphone ";
-            this.studenthandphoneDataGridViewTextBoxColumn.Name = "studenthandphoneDataGridViewTextBoxColumn";
-            this.studenthandphoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentemailDataGridViewTextBoxColumn
-            // 
-            this.studentemailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentemailDataGridViewTextBoxColumn.DataPropertyName = "student_email";
-            this.studentemailDataGridViewTextBoxColumn.HeaderText = "E-mail";
-            this.studentemailDataGridViewTextBoxColumn.Name = "studentemailDataGridViewTextBoxColumn";
-            this.studentemailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentgenderDataGridViewTextBoxColumn
-            // 
-            this.studentgenderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentgenderDataGridViewTextBoxColumn.DataPropertyName = "student_gender";
-            this.studentgenderDataGridViewTextBoxColumn.HeaderText = "Student Gender";
-            this.studentgenderDataGridViewTextBoxColumn.Name = "studentgenderDataGridViewTextBoxColumn";
-            this.studentgenderDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentintakecodeDataGridViewTextBoxColumn
-            // 
-            this.studentintakecodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentintakecodeDataGridViewTextBoxColumn.DataPropertyName = "student_intakecode";
-            this.studentintakecodeDataGridViewTextBoxColumn.HeaderText = "Student Intake Code";
-            this.studentintakecodeDataGridViewTextBoxColumn.Name = "studentintakecodeDataGridViewTextBoxColumn";
-            this.studentintakecodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "Student";
-            this.studentBindingSource.DataSource = this._membership_system_dbDataSet;
-            // 
-            // _membership_system_dbDataSet
-            // 
-            this._membership_system_dbDataSet.DataSetName = "_membership_system_dbDataSet";
-            this._membership_system_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
-            // 
             // messageGroupbox
             // 
             this.messageGroupbox.Controls.Add(this.messageText);
             this.messageGroupbox.Controls.Add(this.statusText);
             this.messageGroupbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageGroupbox.Location = new System.Drawing.Point(27, 601);
+            this.messageGroupbox.Location = new System.Drawing.Point(98, 672);
             this.messageGroupbox.Name = "messageGroupbox";
             this.messageGroupbox.Size = new System.Drawing.Size(558, 100);
             this.messageGroupbox.TabIndex = 8;
@@ -427,22 +335,34 @@
             this.statusText.TabIndex = 22;
             this.statusText.Text = "Status: ";
             // 
+            // memberGridView
+            // 
+            this.memberGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.memberGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.memberGridView.Location = new System.Drawing.Point(727, 213);
+            this.memberGridView.Name = "memberGridView";
+            this.memberGridView.RowTemplate.Height = 24;
+            this.memberGridView.Size = new System.Drawing.Size(1088, 619);
+            this.memberGridView.TabIndex = 9;
+            this.memberGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.memberGridView_RowHeaderMouseClick);
+            // 
             // MemberDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1593, 749);
+            this.ClientSize = new System.Drawing.Size(1881, 829);
+            this.Controls.Add(this.memberGridView);
             this.Controls.Add(this.messageGroupbox);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.registerStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "MemberDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Membership System";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MemberDashboard_Load);
             this.registerStrip.ResumeLayout(false);
             this.registerStrip.PerformLayout();
@@ -450,12 +370,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._membership_system_dbDataSet)).EndInit();
             this.messageGroupbox.ResumeLayout(false);
             this.messageGroupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,19 +402,12 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchTextbox;
         private System.Windows.Forms.Label searchNameLabel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView memberGridView;
-        private _membership_system_dbDataSet _membership_system_dbDataSet;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private _membership_system_dbDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studenthandphoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentemailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentgenderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentintakecodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button clearSearchButton;
         private System.Windows.Forms.GroupBox messageGroupbox;
         private System.Windows.Forms.Label messageText;
         private System.Windows.Forms.Label statusText;
+        private System.Windows.Forms.BindingSource studentBindingSource1;
+        private System.Windows.Forms.DataGridView memberGridView;
     }
 }
