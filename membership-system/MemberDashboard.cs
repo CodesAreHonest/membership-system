@@ -16,6 +16,9 @@ namespace membership_system
 
         private bool insertStudentData;
         private string query;
+        private int studentID;
+
+
         public MemberDashboard()
         {
             InitializeComponent();
@@ -29,11 +32,11 @@ namespace membership_system
                 string.IsNullOrWhiteSpace(intakeCodeTextbox.Text))
             {
                 insertStudentData = false;
-                MessageBox.Show("Please fill all the field for student data! ");
+                MessageBox.Show("Please fill ALL the field for student data! ");
 
                 // warning message
                 messageText.ForeColor = System.Drawing.Color.Red;
-                messageText.Text = "Please fill all the field for student data! ";
+                messageText.Text = "Please fill ALL the field for student data! ";
                 
             }
             else
@@ -89,7 +92,7 @@ namespace membership_system
 
                 // return success message
                 messageText.ForeColor = System.Drawing.Color.Green;
-                messageText.Text = "Member information insert successfully ! ";
+                messageText.Text = "Member information INSERT successfully ! ";
 
             }           
         }
@@ -102,6 +105,12 @@ namespace membership_system
             studentEmailTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
             studentGenderCombobox.Text = memberGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             intakeCodeTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            // register primary key once the row is clicked. 
+            Member member = new Member();
+            member.setName(studentNameTextbox.Text);
+            studentID = member.getMemberID(member.getName());
+            messageText.Text = studentID.ToString();
         }
 
         // display data in datagridview base on query
@@ -138,6 +147,7 @@ namespace membership_system
         private void clearSearchButton_Click(object sender, EventArgs e)
         {
             searchTextbox.Text = "";
+            clearField();
             displayAllField();
         }
 
@@ -146,16 +156,24 @@ namespace membership_system
             validateEmptyField();
             if (insertStudentData)
             {
+
+
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
+
+                
 
 
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "insert into dbo.Student values ('" + member.getName() + "'," + member.getHP() + ",'"
-                    + member.getEmail() + "','" + member.getGender() + "','" + member.getIntakeCode() + "')";
+                command.CommandText = "update dbo.Student set student_name = '" + member.getName() + 
+                                            "', student_handphone = " + member.getHP() + 
+                                            ", student_email = '" + member.getEmail() + 
+                                            "', student_gender = '" + member.getGender() + 
+                                            "', student_intakecode = '" + member.getIntakeCode() + 
+                                            "' where student_id = " + studentID;                   
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
                 connect.close();
@@ -163,7 +181,11 @@ namespace membership_system
                 displayAllField(); // display all the data
                 clearField(); // clear text field 
 
-                             
+                // return success message
+                messageText.ForeColor = System.Drawing.Color.Green;
+                messageText.Text = "Member information UPDATE successfully ! ";
+
+
 
             }
 
