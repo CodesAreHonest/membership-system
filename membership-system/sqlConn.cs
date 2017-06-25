@@ -5,7 +5,7 @@ namespace membership_system
 {
     class SqlConn
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\gitRepo\membership-system\membership-system\membership-system-db.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\gitRepo\membership-system\membership-system-db.mdf;Integrated Security=True;Connect Timeout=30");
         public SqlConnection sqlConnection
         {
             get { return conn;  }

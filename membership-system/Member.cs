@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace membership_system
 {
     class Member
     {
+        private int memberID; 
         private string name;
         private int handphone;
         private string email;
@@ -21,6 +19,16 @@ namespace membership_system
             this.email = email;
             this.gender = gender;
             this.intakecode = intakecode;
+        }
+
+        public Member()
+        {
+
+        }
+
+        public void setName(string name)
+        {
+            this.name = name;
         }
 
         public string getName()
@@ -48,5 +56,27 @@ namespace membership_system
             return intakecode;
         }
 
+        public int getMemberID(string memberName)
+        {
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select student_id from dbo.Student where student_name = '" + memberName + "'";
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                memberID = Convert.ToInt32(reader["student_id"].ToString());
+            }
+
+            reader.Close();
+            connect.close();
+
+            return memberID;
+        }
     }
+
 }
+

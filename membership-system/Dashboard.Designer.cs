@@ -42,11 +42,10 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.memberPanel = new System.Windows.Forms.Panel();
+            this.mDashboardButton = new System.Windows.Forms.Button();
             this.memberStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.button4 = new System.Windows.Forms.Button();
-            this.viewMemberButton = new System.Windows.Forms.Button();
-            this.addMemberButton = new System.Windows.Forms.Button();
             this.meetingPanel = new System.Windows.Forms.Panel();
             this.meetingStrips = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
@@ -213,14 +212,25 @@
             // 
             this.memberPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.memberPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.memberPanel.Controls.Add(this.mDashboardButton);
             this.memberPanel.Controls.Add(this.memberStrip);
             this.memberPanel.Controls.Add(this.button4);
-            this.memberPanel.Controls.Add(this.viewMemberButton);
-            this.memberPanel.Controls.Add(this.addMemberButton);
-            this.memberPanel.Location = new System.Drawing.Point(555, 139);
+            this.memberPanel.Location = new System.Drawing.Point(554, 136);
             this.memberPanel.Name = "memberPanel";
             this.memberPanel.Size = new System.Drawing.Size(653, 211);
             this.memberPanel.TabIndex = 8;
+            // 
+            // mDashboardButton
+            // 
+            this.mDashboardButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.mDashboardButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mDashboardButton.Location = new System.Drawing.Point(78, 78);
+            this.mDashboardButton.Name = "mDashboardButton";
+            this.mDashboardButton.Size = new System.Drawing.Size(214, 40);
+            this.mDashboardButton.TabIndex = 10;
+            this.mDashboardButton.Text = "Member Registration";
+            this.mDashboardButton.UseVisualStyleBackColor = false;
+            this.mDashboardButton.Click += new System.EventHandler(this.mDashboardButton_Click);
             // 
             // memberStrip
             // 
@@ -246,37 +256,13 @@
             // 
             this.button4.BackColor = System.Drawing.Color.SkyBlue;
             this.button4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(388, 125);
+            this.button4.Location = new System.Drawing.Point(356, 78);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(214, 40);
             this.button4.TabIndex = 8;
             this.button4.Text = "Club Fees";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // viewMemberButton
-            // 
-            this.viewMemberButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.viewMemberButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewMemberButton.Location = new System.Drawing.Point(46, 125);
-            this.viewMemberButton.Name = "viewMemberButton";
-            this.viewMemberButton.Size = new System.Drawing.Size(214, 40);
-            this.viewMemberButton.TabIndex = 7;
-            this.viewMemberButton.Text = "View Member";
-            this.viewMemberButton.UseVisualStyleBackColor = false;
-            this.viewMemberButton.Click += new System.EventHandler(this.viewMemberButton_Click);
-            // 
-            // addMemberButton
-            // 
-            this.addMemberButton.BackColor = System.Drawing.Color.SkyBlue;
-            this.addMemberButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMemberButton.Location = new System.Drawing.Point(46, 55);
-            this.addMemberButton.Name = "addMemberButton";
-            this.addMemberButton.Size = new System.Drawing.Size(214, 40);
-            this.addMemberButton.TabIndex = 6;
-            this.addMemberButton.Text = "Add Member";
-            this.addMemberButton.UseVisualStyleBackColor = false;
-            this.addMemberButton.Click += new System.EventHandler(this.addMemberButton_Click);
             // 
             // meetingPanel
             // 
@@ -510,8 +496,6 @@
         private System.Windows.Forms.ToolStrip memberStrip;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button viewMemberButton;
-        private System.Windows.Forms.Button addMemberButton;
         private System.Windows.Forms.Panel meetingPanel;
         private System.Windows.Forms.ToolStrip meetingStrips;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
@@ -529,5 +513,6 @@
         private System.Windows.Forms.Button manageMember;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button mDashboardButton;
     }
 }
