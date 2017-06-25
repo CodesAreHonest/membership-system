@@ -77,3 +77,5 @@ C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserE
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserEditSociety.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.ViewMember.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csproj.GenerateResource.Cache
+C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system-db.mdf
+C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system-db_log.ldf

@@ -28,9 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.registerStrip = new System.Windows.Forms.ToolStrip();
             this.welcomeMessage = new System.Windows.Forms.ToolStripLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.intakeCodeTextbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.studenthpTextbox = new System.Windows.Forms.TextBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.genderLabel = new System.Windows.Forms.Label();
+            this.studentGenderCombobox = new System.Windows.Forms.ComboBox();
+            this.studentEmailTextbox = new System.Windows.Forms.TextBox();
+            this.studentNameTextbox = new System.Windows.Forms.TextBox();
+            this.pocLabel = new System.Windows.Forms.Label();
+            this.fullnameLabel = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.searchNameLabel = new System.Windows.Forms.Label();
+            this.searchTextbox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.memberGridView = new System.Windows.Forms.DataGridView();
+            this._membership_system_dbDataSet = new membership_system._membership_system_dbDataSet();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new membership_system._membership_system_dbDataSetTableAdapters.StudentTableAdapter();
+            this.studentnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studenthandphoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentgenderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentintakecodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clearSearchButton = new System.Windows.Forms.Button();
             this.registerStrip.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._membership_system_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // registerStrip
@@ -45,7 +81,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(973, 43);
+            this.registerStrip.Size = new System.Drawing.Size(1545, 43);
             this.registerStrip.TabIndex = 3;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -59,16 +95,317 @@
             this.welcomeMessage.Size = new System.Drawing.Size(500, 40);
             this.welcomeMessage.Text = "Member Dashboard";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.deleteButton);
+            this.groupBox1.Controls.Add(this.updateButton);
+            this.groupBox1.Controls.Add(this.intakeCodeTextbox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.studenthpTextbox);
+            this.groupBox1.Controls.Add(this.addButton);
+            this.groupBox1.Controls.Add(this.emailLabel);
+            this.groupBox1.Controls.Add(this.genderLabel);
+            this.groupBox1.Controls.Add(this.studentGenderCombobox);
+            this.groupBox1.Controls.Add(this.studentEmailTextbox);
+            this.groupBox1.Controls.Add(this.studentNameTextbox);
+            this.groupBox1.Controls.Add(this.pocLabel);
+            this.groupBox1.Controls.Add(this.fullnameLabel);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(26, 199);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(558, 388);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Student Details";
+            // 
+            // intakeCodeTextbox
+            // 
+            this.intakeCodeTextbox.Location = new System.Drawing.Point(215, 257);
+            this.intakeCodeTextbox.Name = "intakeCodeTextbox";
+            this.intakeCodeTextbox.Size = new System.Drawing.Size(297, 24);
+            this.intakeCodeTextbox.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Intake Code: ";
+            // 
+            // studenthpTextbox
+            // 
+            this.studenthpTextbox.Location = new System.Drawing.Point(215, 99);
+            this.studenthpTextbox.Name = "studenthpTextbox";
+            this.studenthpTextbox.Size = new System.Drawing.Size(297, 24);
+            this.studenthpTextbox.TabIndex = 17;
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.addButton.Location = new System.Drawing.Point(17, 322);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(153, 35);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(24, 153);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(53, 17);
+            this.emailLabel.TabIndex = 16;
+            this.emailLabel.Text = "Email: ";
+            // 
+            // genderLabel
+            // 
+            this.genderLabel.AutoSize = true;
+            this.genderLabel.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLabel.Location = new System.Drawing.Point(24, 206);
+            this.genderLabel.Name = "genderLabel";
+            this.genderLabel.Size = new System.Drawing.Size(64, 17);
+            this.genderLabel.TabIndex = 15;
+            this.genderLabel.Text = "Gender: ";
+            // 
+            // studentGenderCombobox
+            // 
+            this.studentGenderCombobox.FormattingEnabled = true;
+            this.studentGenderCombobox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.studentGenderCombobox.Location = new System.Drawing.Point(215, 203);
+            this.studentGenderCombobox.Name = "studentGenderCombobox";
+            this.studentGenderCombobox.Size = new System.Drawing.Size(297, 24);
+            this.studentGenderCombobox.TabIndex = 12;
+            this.studentGenderCombobox.Text = "Male";
+            // 
+            // studentEmailTextbox
+            // 
+            this.studentEmailTextbox.Location = new System.Drawing.Point(215, 150);
+            this.studentEmailTextbox.Name = "studentEmailTextbox";
+            this.studentEmailTextbox.Size = new System.Drawing.Size(297, 24);
+            this.studentEmailTextbox.TabIndex = 9;
+            // 
+            // studentNameTextbox
+            // 
+            this.studentNameTextbox.Location = new System.Drawing.Point(215, 50);
+            this.studentNameTextbox.Name = "studentNameTextbox";
+            this.studentNameTextbox.Size = new System.Drawing.Size(297, 24);
+            this.studentNameTextbox.TabIndex = 6;
+            // 
+            // pocLabel
+            // 
+            this.pocLabel.AutoSize = true;
+            this.pocLabel.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pocLabel.ForeColor = System.Drawing.Color.Black;
+            this.pocLabel.Location = new System.Drawing.Point(24, 102);
+            this.pocLabel.Name = "pocLabel";
+            this.pocLabel.Size = new System.Drawing.Size(90, 17);
+            this.pocLabel.TabIndex = 5;
+            this.pocLabel.Text = "Handphone: ";
+            // 
+            // fullnameLabel
+            // 
+            this.fullnameLabel.AutoSize = true;
+            this.fullnameLabel.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullnameLabel.Location = new System.Drawing.Point(24, 50);
+            this.fullnameLabel.Name = "fullnameLabel";
+            this.fullnameLabel.Size = new System.Drawing.Size(80, 17);
+            this.fullnameLabel.TabIndex = 0;
+            this.fullnameLabel.Text = "Full name: ";
+            // 
+            // updateButton
+            // 
+            this.updateButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.updateButton.ForeColor = System.Drawing.Color.Black;
+            this.updateButton.Location = new System.Drawing.Point(195, 322);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(153, 35);
+            this.updateButton.TabIndex = 20;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = false;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.deleteButton.ForeColor = System.Drawing.Color.PeachPuff;
+            this.deleteButton.Location = new System.Drawing.Point(372, 322);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(153, 35);
+            this.deleteButton.TabIndex = 21;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.clearSearchButton);
+            this.groupBox2.Controls.Add(this.searchButton);
+            this.groupBox2.Controls.Add(this.searchTextbox);
+            this.groupBox2.Controls.Add(this.searchNameLabel);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(625, 57);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(827, 101);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search Student Here: ";
+            // 
+            // searchNameLabel
+            // 
+            this.searchNameLabel.AutoSize = true;
+            this.searchNameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchNameLabel.Location = new System.Drawing.Point(30, 53);
+            this.searchNameLabel.Name = "searchNameLabel";
+            this.searchNameLabel.Size = new System.Drawing.Size(109, 17);
+            this.searchNameLabel.TabIndex = 22;
+            this.searchNameLabel.Text = "Student Name: ";
+            // 
+            // searchTextbox
+            // 
+            this.searchTextbox.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextbox.Location = new System.Drawing.Point(166, 49);
+            this.searchTextbox.Name = "searchTextbox";
+            this.searchTextbox.Size = new System.Drawing.Size(297, 28);
+            this.searchTextbox.TabIndex = 22;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.searchButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(483, 46);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(153, 35);
+            this.searchButton.TabIndex = 22;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.memberGridView);
+            this.panel1.Location = new System.Drawing.Point(625, 181);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(908, 523);
+            this.panel1.TabIndex = 7;
+            // 
+            // memberGridView
+            // 
+            this.memberGridView.AllowUserToAddRows = false;
+            this.memberGridView.AllowUserToDeleteRows = false;
+            this.memberGridView.AllowUserToOrderColumns = true;
+            this.memberGridView.AutoGenerateColumns = false;
+            this.memberGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.memberGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentnameDataGridViewTextBoxColumn,
+            this.studenthandphoneDataGridViewTextBoxColumn,
+            this.studentemailDataGridViewTextBoxColumn,
+            this.studentgenderDataGridViewTextBoxColumn,
+            this.studentintakecodeDataGridViewTextBoxColumn});
+            this.memberGridView.DataSource = this.studentBindingSource;
+            this.memberGridView.Location = new System.Drawing.Point(3, 3);
+            this.memberGridView.Name = "memberGridView";
+            this.memberGridView.ReadOnly = true;
+            this.memberGridView.RowTemplate.Height = 24;
+            this.memberGridView.Size = new System.Drawing.Size(902, 517);
+            this.memberGridView.TabIndex = 0;
+            // 
+            // _membership_system_dbDataSet
+            // 
+            this._membership_system_dbDataSet.DataSetName = "_membership_system_dbDataSet";
+            this._membership_system_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this._membership_system_dbDataSet;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentnameDataGridViewTextBoxColumn
+            // 
+            this.studentnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentnameDataGridViewTextBoxColumn.DataPropertyName = "student_name";
+            this.studentnameDataGridViewTextBoxColumn.HeaderText = "Student Name ";
+            this.studentnameDataGridViewTextBoxColumn.Name = "studentnameDataGridViewTextBoxColumn";
+            this.studentnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studenthandphoneDataGridViewTextBoxColumn
+            // 
+            this.studenthandphoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studenthandphoneDataGridViewTextBoxColumn.DataPropertyName = "student_handphone";
+            this.studenthandphoneDataGridViewTextBoxColumn.HeaderText = "Handphone ";
+            this.studenthandphoneDataGridViewTextBoxColumn.Name = "studenthandphoneDataGridViewTextBoxColumn";
+            this.studenthandphoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentemailDataGridViewTextBoxColumn
+            // 
+            this.studentemailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentemailDataGridViewTextBoxColumn.DataPropertyName = "student_email";
+            this.studentemailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            this.studentemailDataGridViewTextBoxColumn.Name = "studentemailDataGridViewTextBoxColumn";
+            this.studentemailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentgenderDataGridViewTextBoxColumn
+            // 
+            this.studentgenderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentgenderDataGridViewTextBoxColumn.DataPropertyName = "student_gender";
+            this.studentgenderDataGridViewTextBoxColumn.HeaderText = "Student Gender";
+            this.studentgenderDataGridViewTextBoxColumn.Name = "studentgenderDataGridViewTextBoxColumn";
+            this.studentgenderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // studentintakecodeDataGridViewTextBoxColumn
+            // 
+            this.studentintakecodeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentintakecodeDataGridViewTextBoxColumn.DataPropertyName = "student_intakecode";
+            this.studentintakecodeDataGridViewTextBoxColumn.HeaderText = "Student Intake Code";
+            this.studentintakecodeDataGridViewTextBoxColumn.Name = "studentintakecodeDataGridViewTextBoxColumn";
+            this.studentintakecodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clearSearchButton
+            // 
+            this.clearSearchButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.clearSearchButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearSearchButton.ForeColor = System.Drawing.Color.GreenYellow;
+            this.clearSearchButton.Location = new System.Drawing.Point(652, 46);
+            this.clearSearchButton.Name = "clearSearchButton";
+            this.clearSearchButton.Size = new System.Drawing.Size(153, 35);
+            this.clearSearchButton.TabIndex = 23;
+            this.clearSearchButton.Text = "Clear";
+            this.clearSearchButton.UseVisualStyleBackColor = false;
+            // 
             // MemberDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 563);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(1545, 716);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.registerStrip);
             this.Name = "MemberDashboard";
             this.Text = "Membership System";
+            this.Load += new System.EventHandler(this.MemberDashboard_Load);
             this.registerStrip.ResumeLayout(false);
             this.registerStrip.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._membership_system_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,5 +415,34 @@
 
         private System.Windows.Forms.ToolStrip registerStrip;
         private System.Windows.Forms.ToolStripLabel welcomeMessage;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.TextBox intakeCodeTextbox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox studenthpTextbox;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label genderLabel;
+        private System.Windows.Forms.ComboBox studentGenderCombobox;
+        private System.Windows.Forms.TextBox studentEmailTextbox;
+        private System.Windows.Forms.TextBox studentNameTextbox;
+        private System.Windows.Forms.Label pocLabel;
+        private System.Windows.Forms.Label fullnameLabel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox searchTextbox;
+        private System.Windows.Forms.Label searchNameLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView memberGridView;
+        private _membership_system_dbDataSet _membership_system_dbDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private _membership_system_dbDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studenthandphoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentemailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentgenderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentintakecodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button clearSearchButton;
     }
 }
