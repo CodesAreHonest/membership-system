@@ -228,7 +228,7 @@
             this.mDashboardButton.Name = "mDashboardButton";
             this.mDashboardButton.Size = new System.Drawing.Size(214, 40);
             this.mDashboardButton.TabIndex = 10;
-            this.mDashboardButton.Text = "Configure Member";
+            this.mDashboardButton.Text = "Member Registration";
             this.mDashboardButton.UseVisualStyleBackColor = false;
             this.mDashboardButton.Click += new System.EventHandler(this.mDashboardButton_Click);
             // 
