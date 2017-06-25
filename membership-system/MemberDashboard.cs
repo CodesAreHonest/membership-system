@@ -31,13 +31,7 @@ namespace membership_system
                 string.IsNullOrWhiteSpace(studenthpTextbox.Text) || string.IsNullOrWhiteSpace(studentGenderCombobox.Text) ||
                 string.IsNullOrWhiteSpace(intakeCodeTextbox.Text))
             {
-                insertStudentData = false;
-                MessageBox.Show("Please fill ALL the field for student data! ");
-
-                // warning message
-                messageText.ForeColor = System.Drawing.Color.Red;
-                messageText.Text = "Please fill ALL the field for student data! ";
-                
+                insertStudentData = false;                
             }
             else
             {
@@ -94,7 +88,15 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Green;
                 messageText.Text = "Member information INSERT successfully ! ";
 
-            }           
+            }
+            else
+            {
+                MessageBox.Show("Your action is INVALID because some field is empty or wrong");
+
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong ! ";
+            }          
         }
 
         //dataGridView1 RowHeaderMouseClick Event  
@@ -185,10 +187,49 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Green;
                 messageText.Text = "Member information UPDATE successfully ! ";
 
-
-
+            }
+            else
+            {
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "UPDATE action is INVALID \n because some field is empty or wrong ! ";
             }
 
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            validateEmptyField();
+            if (insertStudentData)
+            {
+
+
+                Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
+                    studentGenderCombobox.Text, intakeCodeTextbox.Text);
+
+                SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = "delete from dbo.Student where student_id = " + studentID;
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                connect.close();
+
+                displayAllField(); // display all the data
+                clearField(); // clear text field 
+
+                // return success message
+                messageText.ForeColor = System.Drawing.Color.Green;
+                messageText.Text = "Member information DELETE successfully ! ";
+
+            }
+            else
+            {
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "DELETE action is INVALID \n because you haven't select a member! ";
+            }
         }
     }
 }

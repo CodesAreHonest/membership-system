@@ -12,6 +12,7 @@ namespace membership_system
             InitializeComponent();
             this.CenterToScreen();
             passwordTextbox.PasswordChar = '*'; // ensure the password textbox not show normal words 
+            setDefault(signInButton);
         }
 
         // proceed to dashboard
@@ -28,6 +29,11 @@ namespace membership_system
             Register register = new Register();
             this.Hide();
             register.ShowDialog();
+        }
+
+        private void setDefault(Button button)
+        {
+            this.AcceptButton = button;
         }
 
         private void signInButton_Click(object sender, EventArgs e)
