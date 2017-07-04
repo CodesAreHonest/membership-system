@@ -21,8 +21,9 @@ namespace membership_system
 
         public MemberDashboard(string session)
         {
-            InitializeComponent();
+            InitializeComponent();            
             this.session = session;
+            headerDisplay();
         }
 
         // To ensure all the field are not empty when add student 
@@ -38,6 +39,12 @@ namespace membership_system
             {
                 insertStudentData = true;
             }
+        }
+
+        private void headerDisplay()
+        {
+            Club club = new Club();
+            welcomeMessage.Text = club.getClubNameDisplay(session) + "'s Member Dashboard";
         }
 
         private void MemberDashboard_Load(object sender, EventArgs e)
@@ -162,13 +169,9 @@ namespace membership_system
             if (insertStudentData)
             {
 
-
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
-
-                
-
-
+              
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
@@ -205,7 +208,6 @@ namespace membership_system
             validateEmptyField();
             if (insertStudentData)
             {
-
 
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);

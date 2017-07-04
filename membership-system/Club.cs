@@ -13,6 +13,7 @@ namespace membership_system
         private string clubName;
         private decimal clubFees;
         private string clubDesription;
+        private string clubName_display;
 
         public Club()
         {
@@ -91,6 +92,29 @@ namespace membership_system
             connect.close();
 
             return clubID;
+        }
+
+        public string getClubNameDisplay(string presidentName) 
+        {
+            President pres = new President();
+            int presidentID = pres.getPresidentID(presidentName);
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select club_name from dbo.Club where president_id = " + presidentID;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                clubName_display = reader["club_name"].ToString();
+            }
+
+            reader.Close();
+            connect.close();
+
+            return clubName_display;
         }
     }
 }
