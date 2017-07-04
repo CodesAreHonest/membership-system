@@ -141,9 +141,11 @@ namespace membership_system
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from dbo.Student where student_name like '%" +
-                searchTextbox.Text + "%'";
+            Club club = new Club();
+            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where c.club_id = " +
+                club.getClubIDFromPresident(session) + " and s.student_name like '%" + searchTextbox.Text + "%'";
             displayData(query);
+            clearField();
         }
 
         // clear search result and display all data 
