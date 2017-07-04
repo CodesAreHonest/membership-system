@@ -17,11 +17,13 @@ namespace membership_system
         private bool insertStudentData;
         private string query;
         private int studentID;
+        private string session;
 
-
-        public MemberDashboard()
+        public MemberDashboard(string session)
         {
-            InitializeComponent();
+            InitializeComponent();            
+            this.session = session;
+            headerDisplay();
         }
 
         // To ensure all the field are not empty when add student 
@@ -39,15 +41,21 @@ namespace membership_system
             }
         }
 
+        private void headerDisplay()
+        {
+            Club club = new Club();
+            welcomeMessage.Text = club.getClubNameDisplay(session) + "'s Member Dashboard";
+        }
+
         private void MemberDashboard_Load(object sender, EventArgs e)
         {
             displayAllField();
-
         }
 
         private void displayAllField()
         {
-            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from dbo.Student";
+            Club club = new Club();
+            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where c.club_id = " + club.getClubIDFromPresident(session);
             displayData(query);
         }
 
@@ -140,9 +148,11 @@ namespace membership_system
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from dbo.Student where student_name like '%" +
-                searchTextbox.Text + "%'";
+            Club club = new Club();
+            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where c.club_id = " +
+                club.getClubIDFromPresident(session) + " and s.student_name like '%" + searchTextbox.Text + "%'";
             displayData(query);
+            clearField();
         }
 
         // clear search result and display all data 
@@ -159,13 +169,9 @@ namespace membership_system
             if (insertStudentData)
             {
 
-
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
-
-                
-
-
+              
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
@@ -202,7 +208,6 @@ namespace membership_system
             validateEmptyField();
             if (insertStudentData)
             {
-
 
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
