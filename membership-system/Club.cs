@@ -69,5 +69,28 @@ namespace membership_system
 
             return clubID;
         }
+
+        public int getClubIDFromPresident(string presidentName)
+        {
+            President pres = new President();
+            int presidentID = pres.getPresidentID(presidentName);
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select club_id from dbo.Club where president_id = " + presidentID;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                clubID = Convert.ToInt32(reader["club_id"].ToString());
+            }
+
+            reader.Close();
+            connect.close();
+
+            return clubID;
+        }
     }
 }

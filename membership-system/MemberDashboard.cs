@@ -17,11 +17,12 @@ namespace membership_system
         private bool insertStudentData;
         private string query;
         private int studentID;
+        private string session;
 
-
-        public MemberDashboard()
+        public MemberDashboard(string session)
         {
             InitializeComponent();
+            this.session = session;
         }
 
         // To ensure all the field are not empty when add student 
@@ -42,12 +43,12 @@ namespace membership_system
         private void MemberDashboard_Load(object sender, EventArgs e)
         {
             displayAllField();
-
         }
 
         private void displayAllField()
         {
-            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from dbo.Student";
+            Club club = new Club();
+            query = "select student_name, student_handphone, student_email, student_gender, student_intakecode from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where c.club_id = " + club.getClubIDFromPresident(session);
             displayData(query);
         }
 
