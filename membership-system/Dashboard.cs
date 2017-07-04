@@ -13,8 +13,8 @@ namespace membership_system
 {
     public partial class Dashboard : Form
     {
-        private string session; // register session with name
-        private string clubname; // register session with club
+        private string session; // register session with president name
+        private string clubname; // register session with club only happens after register
         public Dashboard(string session, string clubname)
         {
             InitializeComponent();
@@ -74,18 +74,6 @@ namespace membership_system
             memberPanel.Visible = false;
             meetingPanel.Visible = false;
             attendancePanel.Visible = true;
-        }
-
-        private void addMemberButton_Click(object sender, EventArgs e)
-        {
-            AddMember am = new AddMember();
-            am.ShowDialog();
-        }
-
-        private void viewMemberButton_Click(object sender, EventArgs e)
-        {
-            ViewMember vm = new ViewMember();
-            vm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -172,7 +160,7 @@ namespace membership_system
 
         private void mDashboardButton_Click(object sender, EventArgs e)
         {
-            MemberDashboard mb = new MemberDashboard();
+            MemberDashboard mb = new MemberDashboard(session);
             mb.ShowDialog();
         }
     }
