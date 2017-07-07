@@ -196,23 +196,31 @@ namespace membership_system
 
         private void updateButton_Click(object sender, EventArgs e)
         {
+
             validateEmptyField();
             if (insertStudentData)
             {
 
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
-              
+
+                // get club id for register table 
+                Club club = new Club();
+                int clubID = club.getClubIDFromPresident(session);
+
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "update dbo.Student set student_name = '" + member.getName() + 
-                                            "', student_handphone = " + member.getHP() + 
-                                            ", student_email = '" + member.getEmail() + 
-                                            "', student_gender = '" + member.getGender() + 
-                                            "', student_intakecode = '" + member.getIntakeCode() + 
-                                            "' where student_id = " + studentID;                   
+                
+                command.CommandText = "update s set s.student_name = '" + member.getName() +
+                                            "', s.student_handphone = " + member.getHP() +
+                                            ", s.student_email = '" + member.getEmail() +
+                                            "', s.student_gender = '" + member.getGender() +
+                                            "', s.student_intakecode = '" + member.getIntakeCode() +
+                "' from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where r.student_id = " +
+                studentID + " and r.club_id = " + clubID;
+
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
                 connect.close();
