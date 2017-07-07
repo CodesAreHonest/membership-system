@@ -89,6 +89,10 @@ namespace membership_system
                 reader.Close();
                 connect.close();
 
+
+                //execute another query insert into register table
+                addDataIntoRegister();
+
                 displayAllField(); // display all the data
                 clearField(); // clear text field 
 
@@ -105,6 +109,29 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong ! ";
             }          
+        }
+
+        private void addDataIntoRegister()
+        {
+            Club club = new Club();
+            Member member = new Member();
+
+            // get student id for register table
+            member.setName(studentNameTextbox.Text);
+            studentID = member.getMemberID(member.getName());
+
+            // get club id for register table 
+            string clubName = club.getClubNameDisplay(session);
+            int clubID = club.getClubIDFromPresident(session);
+
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "insert into dbo.register values(" + studentID + "," + clubID + ",CURRENT_TIMESTAMP, " + club.getClubFeesFromDb(clubID) + ", NULL)";
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
         }
 
         //dataGridView1 RowHeaderMouseClick Event  
@@ -165,23 +192,31 @@ namespace membership_system
 
         private void updateButton_Click(object sender, EventArgs e)
         {
+
             validateEmptyField();
             if (insertStudentData)
             {
 
                 Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
-              
+
+                // get club id for register table 
+                Club club = new Club();
+                int clubID = club.getClubIDFromPresident(session);
+
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "update dbo.Student set student_name = '" + member.getName() + 
-                                            "', student_handphone = " + member.getHP() + 
-                                            ", student_email = '" + member.getEmail() + 
-                                            "', student_gender = '" + member.getGender() + 
-                                            "', student_intakecode = '" + member.getIntakeCode() + 
-                                            "' where student_id = " + studentID;                   
+                
+                command.CommandText = "update s set s.student_name = '" + member.getName() +
+                                            "', s.student_handphone = " + member.getHP() +
+                                            ", s.student_email = '" + member.getEmail() +
+                                            "', s.student_gender = '" + member.getGender() +
+                                            "', s.student_intakecode = '" + member.getIntakeCode() +
+                "' from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where r.student_id = " +
+                studentID + " and r.club_id = " + clubID;
+
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
                 connect.close();
@@ -216,8 +251,12 @@ namespace membership_system
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "delete from dbo.Student where student_id = " + studentID;
+                command.CommandText = "delete from dbo.Register where student_id = " + studentID;
                 SqlDataReader reader = command.ExecuteReader();
+
+                deleteMemberFromStudent();
+
+
                 reader.Close();
                 connect.close();
 
@@ -235,6 +274,19 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "DELETE action is INVALID \n because you haven't select a member! ";
             }
+        }
+
+        // delete Member from student table
+        private void deleteMemberFromStudent()
+        {
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "delete from dbo.Student where student_id = " + studentID;
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
         }
     }
 }
