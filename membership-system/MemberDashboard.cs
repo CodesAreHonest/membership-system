@@ -89,6 +89,10 @@ namespace membership_system
                 reader.Close();
                 connect.close();
 
+
+                //execute another query insert into register table
+                addDataIntoRegister();
+
                 displayAllField(); // display all the data
                 clearField(); // clear text field 
 
@@ -105,6 +109,33 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong ! ";
             }          
+        }
+
+        private void addDataIntoRegister()
+        {
+            Club club = new Club();
+            Member member = new Member();
+
+            // get student id for register table
+            member.setName(studentNameTextbox.Text);
+            studentID = member.getMemberID(member.getName());
+
+            // get club id for register table 
+            string clubName = club.getClubNameDisplay(session);
+            int clubID = club.getClubIDFromPresident(session);
+
+            //MessageBox.Show(studentID + " " + clubID + " " + club.getClubFeesFromDb(clubID));
+            MessageBox.Show(studentID.ToString());
+
+
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "insert into dbo.register values(" + studentID + "," + clubID + ",CURRENT_TIMESTAMP, " + club.getClubFeesFromDb(clubID) + ", NULL)";
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
         }
 
         //dataGridView1 RowHeaderMouseClick Event  
