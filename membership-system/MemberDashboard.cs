@@ -124,10 +124,6 @@ namespace membership_system
             string clubName = club.getClubNameDisplay(session);
             int clubID = club.getClubIDFromPresident(session);
 
-            //MessageBox.Show(studentID + " " + clubID + " " + club.getClubFeesFromDb(clubID));
-            MessageBox.Show(studentID.ToString());
-
-
             SqlConn connect = new SqlConn();
             connect.open();
             SqlCommand command = new SqlCommand();
@@ -255,8 +251,12 @@ namespace membership_system
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "delete from dbo.Student where student_id = " + studentID;
+                command.CommandText = "delete from dbo.Register where student_id = " + studentID;
                 SqlDataReader reader = command.ExecuteReader();
+
+                deleteMemberFromStudent();
+
+
                 reader.Close();
                 connect.close();
 
@@ -274,6 +274,19 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "DELETE action is INVALID \n because you haven't select a member! ";
             }
+        }
+
+        // delete Member from student table
+        private void deleteMemberFromStudent()
+        {
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "delete from dbo.Student where student_id = " + studentID;
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
         }
     }
 }
