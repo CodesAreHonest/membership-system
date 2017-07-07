@@ -45,6 +45,27 @@ namespace membership_system
             return Convert.ToString(clubFees);
         }
 
+        public decimal getClubFeesFromDb(int clubID)
+        {
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select club_fees from dbo.Club where club_id = " + clubID;
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                clubFees = Convert.ToDecimal(reader["club_fees"].ToString());
+            }
+
+            reader.Close();
+            connect.close();
+
+            return clubFees;
+        }
+
         public string getClubDescription()
         {
             return clubDesription;
