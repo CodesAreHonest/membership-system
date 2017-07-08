@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.registerStrip = new System.Windows.Forms.ToolStrip();
-            this.registerStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.welcomeMessage = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.paidTextbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.registerStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.registerStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.registerStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.registerStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registerStripLabel});
+            this.welcomeMessage});
             this.registerStrip.Location = new System.Drawing.Point(0, 0);
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
@@ -54,15 +54,15 @@
             this.registerStrip.TabIndex = 6;
             this.registerStrip.Text = "toolStrip1";
             // 
-            // registerStripLabel
+            // welcomeMessage
             // 
-            this.registerStripLabel.AutoSize = false;
-            this.registerStripLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.registerStripLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.registerStripLabel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.registerStripLabel.Name = "registerStripLabel";
-            this.registerStripLabel.Size = new System.Drawing.Size(202, 40);
-            this.registerStripLabel.Text = "Membership System";
+            this.welcomeMessage.AutoSize = false;
+            this.welcomeMessage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.welcomeMessage.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.welcomeMessage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.welcomeMessage.Name = "welcomeMessage";
+            this.welcomeMessage.Size = new System.Drawing.Size(202, 40);
+            this.welcomeMessage.Text = "Club Fees";
             // 
             // dataGridView1
             // 
@@ -91,30 +91,30 @@
             this.paidTextbox.Size = new System.Drawing.Size(257, 24);
             this.paidTextbox.TabIndex = 12;
             // 
-            // button1
+            // searchButton
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(993, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 30);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Search ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.searchButton.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(993, 64);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(127, 30);
+            this.searchButton.TabIndex = 15;
+            this.searchButton.Text = "Search ";
+            this.searchButton.UseVisualStyleBackColor = false;
             // 
             // ClubFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 527);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.paidTextbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.registerStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ClubFees";
-            this.Text = "ClubFees";
+            this.Text = "Membership System";
             this.registerStrip.ResumeLayout(false);
             this.registerStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -126,10 +126,10 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip registerStrip;
-        private System.Windows.Forms.ToolStripLabel registerStripLabel;
+        private System.Windows.Forms.ToolStripLabel welcomeMessage;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox paidTextbox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button searchButton;
     }
 }

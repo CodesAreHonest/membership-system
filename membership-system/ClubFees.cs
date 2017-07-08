@@ -12,14 +12,20 @@ namespace membership_system
 {
     public partial class ClubFees : Form
     {
-        public ClubFees()
+        private string session;
+        Club club = new Club();
+
+        public ClubFees(string session)
         {
             InitializeComponent();
+            this.session = session;
+            headerDisplay();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void headerDisplay()
         {
-
+            welcomeMessage.Text = club.getClubNameDisplay(session) + "'s Club Fees Management";
         }
+
     }
 }
