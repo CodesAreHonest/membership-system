@@ -78,7 +78,7 @@ namespace membership_system
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ClubFees cf = new ClubFees(session);
+            clubFees cf = new clubFees(session);
             cf.ShowDialog();
         }
 
