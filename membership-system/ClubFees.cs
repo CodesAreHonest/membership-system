@@ -58,5 +58,42 @@ namespace membership_system
         {
             displayFeeSummary();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            query = "select student_name, member_fees, member_paid from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id where r.club_id = " +
+                club.getClubIDFromPresident(session) + " and s.student_name like '%" + searchTextbox.Text + "%'";
+            displayData(query);
+            //clearField();
+        }
+
+        private void memberGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            studentTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            feesRequiredTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            feesPaidTextbox.Text = "0.00";
+            feesLeftTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            Boolean paidStatus = Convert.ToBoolean(memberGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
+
+            if (!paidStatus)
+            {
+                feesStatusLabel.ForeColor = System.Drawing.Color.Red;
+                feesStatusLabel.Text = "NOT PAID";
+            }
+            else
+            {
+                feesStatusLabel.ForeColor = System.Drawing.Color.Green;
+                feesStatusLabel.Text = "PAID";
+            }
+        }
+
+        private void clearField()
+        {
+            studentTextbox.Text = "";
+            feesRequiredTextbox.Text = "";
+            feesPaidTextbox.Text = "";
+            feesLeftTextbox.Text = "";
+        }
     }
 }
