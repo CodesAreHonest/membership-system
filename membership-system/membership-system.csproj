@@ -104,6 +104,7 @@
     <Compile Include="EditMeeting.Designer.cs">
       <DependentUpon>EditMeeting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fee.cs" />
     <Compile Include="Meeting.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="MemberDashboard.cs">

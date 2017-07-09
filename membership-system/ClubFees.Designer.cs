@@ -36,19 +36,20 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.feesGroupbox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.studentTextbox = new System.Windows.Forms.TextBox();
-            this.feesRequiredTextbox = new System.Windows.Forms.TextBox();
-            this.feesPaidTextbox = new System.Windows.Forms.TextBox();
-            this.feesLeftTextbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.studNameLabel = new System.Windows.Forms.Label();
+            this.calculateButton = new System.Windows.Forms.Button();
             this.feesStatusLabel = new System.Windows.Forms.Label();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.feesLeftTextbox = new System.Windows.Forms.TextBox();
+            this.feesPaidTextbox = new System.Windows.Forms.TextBox();
+            this.feesRequiredTextbox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
             this.feesGroupbox.SuspendLayout();
@@ -66,7 +67,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(1251, 43);
+            this.registerStrip.Size = new System.Drawing.Size(1308, 43);
             this.registerStrip.TabIndex = 6;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -85,11 +86,11 @@
             this.memberGridView.AllowUserToAddRows = false;
             this.memberGridView.AllowUserToDeleteRows = false;
             this.memberGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.memberGridView.Location = new System.Drawing.Point(611, 151);
+            this.memberGridView.Location = new System.Drawing.Point(661, 138);
             this.memberGridView.Name = "memberGridView";
             this.memberGridView.ReadOnly = true;
             this.memberGridView.RowTemplate.Height = 24;
-            this.memberGridView.Size = new System.Drawing.Size(590, 362);
+            this.memberGridView.Size = new System.Drawing.Size(591, 434);
             this.memberGridView.TabIndex = 10;
             this.memberGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.memberGridView_RowHeaderMouseClick);
             // 
@@ -97,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(608, 70);
+            this.label1.Location = new System.Drawing.Point(675, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 11;
@@ -105,17 +106,17 @@
             // 
             // searchTextbox
             // 
-            this.searchTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextbox.Location = new System.Drawing.Point(768, 66);
+            this.searchTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextbox.Location = new System.Drawing.Point(835, 78);
             this.searchTextbox.Name = "searchTextbox";
-            this.searchTextbox.Size = new System.Drawing.Size(257, 24);
+            this.searchTextbox.Size = new System.Drawing.Size(257, 27);
             this.searchTextbox.TabIndex = 12;
             // 
             // searchButton
             // 
             this.searchButton.BackColor = System.Drawing.Color.LightSkyBlue;
             this.searchButton.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(1058, 60);
+            this.searchButton.Location = new System.Drawing.Point(1125, 72);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(127, 38);
             this.searchButton.TabIndex = 15;
@@ -125,12 +126,13 @@
             // 
             // feesGroupbox
             // 
+            this.feesGroupbox.Controls.Add(this.studNameLabel);
+            this.feesGroupbox.Controls.Add(this.calculateButton);
             this.feesGroupbox.Controls.Add(this.feesStatusLabel);
-            this.feesGroupbox.Controls.Add(this.button1);
+            this.feesGroupbox.Controls.Add(this.updateButton);
             this.feesGroupbox.Controls.Add(this.feesLeftTextbox);
             this.feesGroupbox.Controls.Add(this.feesPaidTextbox);
             this.feesGroupbox.Controls.Add(this.feesRequiredTextbox);
-            this.feesGroupbox.Controls.Add(this.studentTextbox);
             this.feesGroupbox.Controls.Add(this.label8);
             this.feesGroupbox.Controls.Add(this.label7);
             this.feesGroupbox.Controls.Add(this.label6);
@@ -138,73 +140,83 @@
             this.feesGroupbox.Controls.Add(this.label4);
             this.feesGroupbox.Controls.Add(this.label3);
             this.feesGroupbox.Controls.Add(this.label2);
-            this.feesGroupbox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesGroupbox.Location = new System.Drawing.Point(26, 116);
+            this.feesGroupbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesGroupbox.Location = new System.Drawing.Point(29, 100);
             this.feesGroupbox.Name = "feesGroupbox";
-            this.feesGroupbox.Size = new System.Drawing.Size(509, 433);
+            this.feesGroupbox.Size = new System.Drawing.Size(582, 433);
             this.feesGroupbox.TabIndex = 16;
             this.feesGroupbox.TabStop = false;
-            this.feesGroupbox.Text = "Member Fees: ";
+            this.feesGroupbox.Text = "Manage member fees here: ";
             // 
-            // label2
+            // studNameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 17);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Student name: ";
+            this.studNameLabel.AutoSize = true;
+            this.studNameLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studNameLabel.Location = new System.Drawing.Point(141, 47);
+            this.studNameLabel.Name = "studNameLabel";
+            this.studNameLabel.Size = new System.Drawing.Size(15, 19);
+            this.studNameLabel.TabIndex = 30;
+            this.studNameLabel.Text = "-";
             // 
-            // label3
+            // calculateButton
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 17);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Fees required to pay: ";
+            this.calculateButton.BackColor = System.Drawing.Color.Yellow;
+            this.calculateButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calculateButton.Location = new System.Drawing.Point(458, 205);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(99, 36);
+            this.calculateButton.TabIndex = 17;
+            this.calculateButton.Text = "Calculate!";
+            this.calculateButton.UseVisualStyleBackColor = false;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
-            // label4
+            // feesStatusLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(132, 161);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "- Fees paid: ";
+            this.feesStatusLabel.AutoSize = true;
+            this.feesStatusLabel.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesStatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.feesStatusLabel.Location = new System.Drawing.Point(140, 298);
+            this.feesStatusLabel.Name = "feesStatusLabel";
+            this.feesStatusLabel.Size = new System.Drawing.Size(100, 22);
+            this.feesStatusLabel.TabIndex = 29;
+            this.feesStatusLabel.Text = "NOT PAID";
             // 
-            // label5
+            // updateButton
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(383, 17);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "---------------------------------------------------------------------------";
+            this.updateButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.updateButton.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.ForeColor = System.Drawing.Color.Black;
+            this.updateButton.Location = new System.Drawing.Point(70, 370);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(446, 38);
+            this.updateButton.TabIndex = 28;
+            this.updateButton.Text = "Update";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
-            // label6
+            // feesLeftTextbox
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(72, 233);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(383, 17);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "---------------------------------------------------------------------------";
+            this.feesLeftTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesLeftTextbox.Location = new System.Drawing.Point(208, 207);
+            this.feesLeftTextbox.Name = "feesLeftTextbox";
+            this.feesLeftTextbox.Size = new System.Drawing.Size(208, 27);
+            this.feesLeftTextbox.TabIndex = 27;
             // 
-            // label7
+            // feesPaidTextbox
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(149, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Fees left: ";
+            this.feesPaidTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesPaidTextbox.Location = new System.Drawing.Point(208, 157);
+            this.feesPaidTextbox.Name = "feesPaidTextbox";
+            this.feesPaidTextbox.Size = new System.Drawing.Size(208, 27);
+            this.feesPaidTextbox.TabIndex = 26;
+            // 
+            // feesRequiredTextbox
+            // 
+            this.feesRequiredTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesRequiredTextbox.Location = new System.Drawing.Point(208, 112);
+            this.feesRequiredTextbox.Name = "feesRequiredTextbox";
+            this.feesRequiredTextbox.Size = new System.Drawing.Size(208, 27);
+            this.feesRequiredTextbox.TabIndex = 25;
             // 
             // label8
             // 
@@ -216,66 +228,71 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Fees status: ";
             // 
-            // studentTextbox
+            // label7
             // 
-            this.studentTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentTextbox.Location = new System.Drawing.Point(141, 44);
-            this.studentTextbox.Name = "studentTextbox";
-            this.studentTextbox.Size = new System.Drawing.Size(264, 27);
-            this.studentTextbox.TabIndex = 24;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(117, 214);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 18);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Fees left: ";
             // 
-            // feesRequiredTextbox
+            // label6
             // 
-            this.feesRequiredTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesRequiredTextbox.Location = new System.Drawing.Point(236, 111);
-            this.feesRequiredTextbox.Name = "feesRequiredTextbox";
-            this.feesRequiredTextbox.Size = new System.Drawing.Size(208, 27);
-            this.feesRequiredTextbox.TabIndex = 25;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(44, 234);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(383, 17);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "---------------------------------------------------------------------------";
             // 
-            // feesPaidTextbox
+            // label5
             // 
-            this.feesPaidTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesPaidTextbox.Location = new System.Drawing.Point(236, 156);
-            this.feesPaidTextbox.Name = "feesPaidTextbox";
-            this.feesPaidTextbox.Size = new System.Drawing.Size(208, 27);
-            this.feesPaidTextbox.TabIndex = 26;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(44, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(383, 17);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "---------------------------------------------------------------------------";
             // 
-            // feesLeftTextbox
+            // label4
             // 
-            this.feesLeftTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesLeftTextbox.Location = new System.Drawing.Point(236, 206);
-            this.feesLeftTextbox.Name = "feesLeftTextbox";
-            this.feesLeftTextbox.Size = new System.Drawing.Size(208, 27);
-            this.feesLeftTextbox.TabIndex = 27;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(100, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 18);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "- Fees paid: ";
             // 
-            // button1
+            // label3
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(31, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(446, 38);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(109, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 18);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Fees owe: ";
             // 
-            // feesStatusLabel
+            // label2
             // 
-            this.feesStatusLabel.AutoSize = true;
-            this.feesStatusLabel.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesStatusLabel.ForeColor = System.Drawing.Color.Red;
-            this.feesStatusLabel.Location = new System.Drawing.Point(121, 299);
-            this.feesStatusLabel.Name = "feesStatusLabel";
-            this.feesStatusLabel.Size = new System.Drawing.Size(100, 22);
-            this.feesStatusLabel.TabIndex = 29;
-            this.feesStatusLabel.Text = "NOT PAID";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 17);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Student name: ";
             // 
             // clubFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1251, 596);
+            this.ClientSize = new System.Drawing.Size(1308, 609);
             this.Controls.Add(this.feesGroupbox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextbox);
@@ -313,12 +330,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.TextBox feesLeftTextbox;
         private System.Windows.Forms.TextBox feesPaidTextbox;
         private System.Windows.Forms.TextBox feesRequiredTextbox;
-        private System.Windows.Forms.TextBox studentTextbox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label feesStatusLabel;
+        private System.Windows.Forms.Button calculateButton;
+        private System.Windows.Forms.Label studNameLabel;
     }
 }

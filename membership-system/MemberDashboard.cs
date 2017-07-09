@@ -147,7 +147,6 @@ namespace membership_system
             Member member = new Member();
             member.setName(studentNameTextbox.Text);
             studentID = member.getMemberID(member.getName());
-            messageText.Text = studentID.ToString();
         }
 
         // display data in datagridview base on query
