@@ -128,7 +128,7 @@ namespace membership_system
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            command.CommandText = "insert into dbo.register values(" + studentID + "," + clubID + ",CURRENT_TIMESTAMP, " + club.getClubFeesFromDb(clubID) + ", NULL)";
+            command.CommandText = "insert into dbo.register values(" + studentID + "," + clubID + ",CURRENT_TIMESTAMP, " + club.getClubFeesFromDb(clubID) + ", '0')";
             SqlDataReader reader = command.ExecuteReader();
             reader.Close();
             connect.close();

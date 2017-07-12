@@ -61,7 +61,9 @@ namespace membership_system
         public int calculatePaidStatus()
         {
             // extra validation for safety purpose
-            paid = (getFeesLeft().Equals(0) || calculateRemainingFees().Equals(0)) ? true : false;
+            
+            paid = (getFeesLeft().Equals(0)) ? true : false;
+             
 
             int paidBit = (paid) ? 1 : 0;
             return paidBit;
