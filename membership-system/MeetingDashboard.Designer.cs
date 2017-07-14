@@ -55,6 +55,8 @@
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -245,6 +247,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker3);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
@@ -273,10 +277,10 @@
             // 
             this.dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(302, 199);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(297, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 27);
             this.dateTimePicker1.TabIndex = 24;
             this.dateTimePicker1.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
             // 
@@ -284,10 +288,10 @@
             // 
             this.startTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
             this.startTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startTimePicker.Location = new System.Drawing.Point(302, 148);
             this.startTimePicker.Name = "startTimePicker";
-            this.startTimePicker.Size = new System.Drawing.Size(297, 27);
+            this.startTimePicker.Size = new System.Drawing.Size(182, 27);
             this.startTimePicker.TabIndex = 23;
             this.startTimePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
             // 
@@ -362,6 +366,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(1008, 667);
             this.dataGridView1.TabIndex = 10;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(508, 199);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(175, 27);
+            this.dateTimePicker2.TabIndex = 27;
+            this.dateTimePicker2.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "";
+            this.dateTimePicker3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker3.Location = new System.Drawing.Point(508, 148);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.ShowUpDown = true;
+            this.dateTimePicker3.Size = new System.Drawing.Size(175, 27);
+            this.dateTimePicker3.TabIndex = 28;
+            this.dateTimePicker3.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            // 
             // MeetingDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,5 +449,7 @@
         private System.Windows.Forms.Label messageText;
         private System.Windows.Forms.Label statusText;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
