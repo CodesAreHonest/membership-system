@@ -101,6 +101,7 @@
             this.clearButton.TabIndex = 23;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = false;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // searchButton
             // 
@@ -181,7 +182,7 @@
             // 
             // locationTextbox
             // 
-            this.locationTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locationTextbox.Location = new System.Drawing.Point(302, 100);
             this.locationTextbox.Name = "locationTextbox";
             this.locationTextbox.Size = new System.Drawing.Size(297, 27);
@@ -219,7 +220,7 @@
             // 
             // nameTextbox
             // 
-            this.nameTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextbox.Location = new System.Drawing.Point(302, 48);
             this.nameTextbox.Name = "nameTextbox";
             this.nameTextbox.Size = new System.Drawing.Size(297, 27);
@@ -277,7 +278,7 @@
             // endDatePicker
             // 
             this.endDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.endDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDatePicker.Location = new System.Drawing.Point(302, 199);
             this.endDatePicker.Name = "endDatePicker";
@@ -288,7 +289,7 @@
             // startDatePicker
             // 
             this.startDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.startDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDatePicker.Location = new System.Drawing.Point(302, 148);
             this.startDatePicker.Name = "startDatePicker";
@@ -299,12 +300,12 @@
             // durationLabel
             // 
             this.durationLabel.AutoSize = true;
-            this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationLabel.Location = new System.Drawing.Point(299, 259);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(15, 19);
+            this.durationLabel.Size = new System.Drawing.Size(208, 19);
             this.durationLabel.TabIndex = 22;
-            this.durationLabel.Text = "-";
+            this.durationLabel.Text = "0 hour 0 minute 0 second";
             // 
             // label8
             // 
@@ -318,7 +319,7 @@
             // 
             // descriptionTextbox
             // 
-            this.descriptionTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionTextbox.Location = new System.Drawing.Point(302, 307);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
@@ -370,7 +371,7 @@
             // endTimePicker
             // 
             this.endTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.endTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.endTimePicker.Location = new System.Drawing.Point(508, 199);
             this.endTimePicker.Name = "endTimePicker";
@@ -382,7 +383,7 @@
             // startTimePicker
             // 
             this.startTimePicker.CustomFormat = "";
-            this.startTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.startTimePicker.Location = new System.Drawing.Point(508, 148);
             this.startTimePicker.Name = "startTimePicker";

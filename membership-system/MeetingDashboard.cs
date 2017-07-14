@@ -64,7 +64,25 @@ namespace membership_system
             query = "select meeting_name, meeting_location, meeting_description, meeting_starttime, meeting_endtime, meeting_duration from meeting where club_id = " + club.getClubIDFromPresident(session) +
                 " and meeting_name like '%" + searchTextbox.Text + "%'";
             displayData(query);
-            //clearField();
+            clearField();
+        }
+
+        private void clearField()
+        {
+            nameTextbox.Text = "";
+            locationTextbox.Text = "";
+            startDatePicker.Text = DateTime.Now.ToString();
+            startTimePicker.Text = DateTime.Now.ToString();
+            endDatePicker.Text = DateTime.Now.ToString();
+            endTimePicker.Text = DateTime.Now.ToString();
+            durationLabel.Text = "0 hour 0 minute 0 second";
+            descriptionTextbox.Text = "";
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            clearField();
+            searchTextbox.Text = "";
         }
     }
 }
