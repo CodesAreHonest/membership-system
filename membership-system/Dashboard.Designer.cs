@@ -273,7 +273,7 @@
             this.meetingPanel.Controls.Add(this.editMeetingButton);
             this.meetingPanel.Controls.Add(this.createMeetingButton);
             this.meetingPanel.Controls.Add(this.inviteMeetingButton);
-            this.meetingPanel.Location = new System.Drawing.Point(554, 227);
+            this.meetingPanel.Location = new System.Drawing.Point(553, 214);
             this.meetingPanel.Name = "meetingPanel";
             this.meetingPanel.Size = new System.Drawing.Size(653, 217);
             this.meetingPanel.TabIndex = 10;

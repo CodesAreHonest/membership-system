@@ -96,8 +96,8 @@ namespace membership_system
 
         private void inviteMeetingButton_Click(object sender, EventArgs e)
         {
-            SendMeeting sm = new SendMeeting();
-            sm.ShowDialog();
+            MeetingDashboard md = new MeetingDashboard();
+            md.ShowDialog();
         }
 
         private void cr8meetingReport_Click(object sender, EventArgs e)

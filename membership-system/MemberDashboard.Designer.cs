@@ -50,19 +50,19 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextbox = new System.Windows.Forms.TextBox();
             this.searchNameLabel = new System.Windows.Forms.Label();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.messageGroupbox = new System.Windows.Forms.GroupBox();
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
-            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.memberGridView = new System.Windows.Forms.DataGridView();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.messageGroupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // registerStrip
@@ -371,11 +371,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.messageGroupbox.ResumeLayout(false);
             this.messageGroupbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
