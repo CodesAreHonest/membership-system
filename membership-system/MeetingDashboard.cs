@@ -58,6 +58,13 @@ namespace membership_system
             }
         }
 
-        
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            Club club = new Club();
+            query = "select meeting_name, meeting_location, meeting_description, meeting_starttime, meeting_endtime, meeting_duration from meeting where club_id = " + club.getClubIDFromPresident(session) +
+                " and meeting_name like '%" + searchTextbox.Text + "%'";
+            displayData(query);
+            //clearField();
+        }
     }
 }
