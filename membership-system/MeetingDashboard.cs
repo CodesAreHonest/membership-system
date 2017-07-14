@@ -75,7 +75,7 @@ namespace membership_system
             startTimePicker.Text = DateTime.Now.ToString();
             endDatePicker.Text = DateTime.Now.ToString();
             endTimePicker.Text = DateTime.Now.ToString();
-            durationLabel.Text = "0 hour 0 minute 0 second";
+            durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             descriptionTextbox.Text = "";
         }
 
@@ -83,6 +83,12 @@ namespace membership_system
         {
             clearField();
             searchTextbox.Text = "";
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Meeting m = new Meeting();
+
         }
     }
 }

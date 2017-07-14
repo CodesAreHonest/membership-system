@@ -37,14 +37,14 @@ namespace membership_system
             this.description = description;
         }
 
-        public void setStartTime(string startTime)
+        public void setStartTime(DateTime startDate, DateTime startTime)
         {
-            this.startTime = Convert.ToDateTime(startTime);
+            this.startTime = startDate.Date + startTime.TimeOfDay;
         }
 
-        public void setEndTime(string endTime)
+        public void setEndTime(DateTime endDate, DateTime endTime)
         {
-            this.endTime = Convert.ToDateTime(endTime);
+            this.endTime = endDate.Date + endTime.TimeOfDay;
         }
 
         public void calculateDuration()
@@ -83,13 +83,13 @@ namespace membership_system
             return meetingDuration;
         }
 
-        public int getMeetingID()
+        public int getMeetingID(string meetingName)
         {
             SqlConn connect = new SqlConn();
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            //command.CommandText = "select meeting_id from dbo.Meeting where club_name = " + clubName;
+            //command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" + meetingName + "' and club_id = ";
 
             SqlDataReader reader = command.ExecuteReader();
 

@@ -197,6 +197,7 @@
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label3
             // 
@@ -303,9 +304,9 @@
             this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.durationLabel.Location = new System.Drawing.Point(299, 259);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(208, 19);
+            this.durationLabel.Size = new System.Drawing.Size(255, 19);
             this.durationLabel.TabIndex = 22;
-            this.durationLabel.Text = "0 hour 0 minute 0 second";
+            this.durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             // 
             // label8
             // 
