@@ -74,5 +74,5 @@ C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.SendM
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserEditAccount.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserEditSociety.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csproj.GenerateResource.Cache
-C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csprojResolveAssemblyReference.cache
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.MeetingDashboard.resources
+C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csprojResolveAssemblyReference.cache

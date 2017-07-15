@@ -46,17 +46,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.endDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.startDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.durationLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.startTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descriptionTextbox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.durationLabel = new System.Windows.Forms.Label();
             this.messageGroupbox = new System.Windows.Forms.GroupBox();
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
             this.meetingGridView = new System.Windows.Forms.DataGridView();
-            this.endTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.startTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -152,7 +152,7 @@
             // 
             this.deleteButton.BackColor = System.Drawing.Color.Crimson;
             this.deleteButton.ForeColor = System.Drawing.Color.PeachPuff;
-            this.deleteButton.Location = new System.Drawing.Point(493, 477);
+            this.deleteButton.Location = new System.Drawing.Point(493, 507);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(180, 46);
             this.deleteButton.TabIndex = 21;
@@ -163,7 +163,7 @@
             // 
             this.updateButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.updateButton.ForeColor = System.Drawing.Color.Black;
-            this.updateButton.Location = new System.Drawing.Point(285, 477);
+            this.updateButton.Location = new System.Drawing.Point(285, 507);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(180, 46);
             this.updateButton.TabIndex = 20;
@@ -174,7 +174,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 259);
+            this.label2.Location = new System.Drawing.Point(173, 309);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 19);
             this.label2.TabIndex = 18;
@@ -191,7 +191,7 @@
             // addButton
             // 
             this.addButton.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.addButton.Location = new System.Drawing.Point(74, 477);
+            this.addButton.Location = new System.Drawing.Point(74, 507);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(180, 46);
             this.addButton.TabIndex = 1;
@@ -203,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(111, 154);
+            this.label3.Location = new System.Drawing.Point(162, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 19);
             this.label3.TabIndex = 16;
@@ -213,7 +213,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(111, 205);
+            this.label4.Location = new System.Drawing.Point(167, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 15;
@@ -242,7 +242,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(111, 51);
+            this.label6.Location = new System.Drawing.Point(133, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 19);
             this.label6.TabIndex = 0;
@@ -250,12 +250,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.startTimePicker);
             this.groupBox2.Controls.Add(this.endTimePicker);
             this.groupBox2.Controls.Add(this.descriptionTextbox);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.endDatePicker);
-            this.groupBox2.Controls.Add(this.startDatePicker);
+            this.groupBox2.Controls.Add(this.datePicker);
             this.groupBox2.Controls.Add(this.durationLabel);
             this.groupBox2.Controls.Add(this.deleteButton);
             this.groupBox2.Controls.Add(this.updateButton);
@@ -271,68 +271,82 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(53, 206);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(753, 547);
+            this.groupBox2.Size = new System.Drawing.Size(753, 575);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Meeting Details ";
             // 
-            // endDatePicker
+            // startTimePicker
             // 
-            this.endDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.endDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.endDatePicker.Location = new System.Drawing.Point(302, 199);
-            this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(182, 27);
-            this.endDatePicker.TabIndex = 24;
-            this.endDatePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.startTimePicker.CustomFormat = "";
+            this.startTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.startTimePicker.Location = new System.Drawing.Point(379, 198);
+            this.startTimePicker.Name = "startTimePicker";
+            this.startTimePicker.ShowUpDown = true;
+            this.startTimePicker.Size = new System.Drawing.Size(175, 27);
+            this.startTimePicker.TabIndex = 28;
+            this.startTimePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.startTimePicker.ValueChanged += new System.EventHandler(this.startTimePicker_ValueChanged);
             // 
-            // startDatePicker
+            // endTimePicker
             // 
-            this.startDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.startDatePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.startDatePicker.Location = new System.Drawing.Point(302, 148);
-            this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(182, 27);
-            this.startDatePicker.TabIndex = 23;
-            this.startDatePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.endTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.endTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.endTimePicker.Location = new System.Drawing.Point(379, 247);
+            this.endTimePicker.Name = "endTimePicker";
+            this.endTimePicker.ShowUpDown = true;
+            this.endTimePicker.Size = new System.Drawing.Size(175, 27);
+            this.endTimePicker.TabIndex = 27;
+            this.endTimePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.endTimePicker.ValueChanged += new System.EventHandler(this.endTimePicker_ValueChanged);
             // 
-            // durationLabel
+            // descriptionTextbox
             // 
-            this.durationLabel.AutoSize = true;
-            this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.durationLabel.Location = new System.Drawing.Point(299, 259);
-            this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(255, 19);
-            this.durationLabel.TabIndex = 22;
-            this.durationLabel.Text = "0 day 0 hour 0 minute 0 second";
+            this.descriptionTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextbox.Location = new System.Drawing.Point(245, 357);
+            this.descriptionTextbox.Multiline = true;
+            this.descriptionTextbox.Name = "descriptionTextbox";
+            this.descriptionTextbox.Size = new System.Drawing.Size(387, 115);
+            this.descriptionTextbox.TabIndex = 26;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(111, 312);
+            this.label8.Location = new System.Drawing.Point(48, 401);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(164, 19);
             this.label8.TabIndex = 25;
             this.label8.Text = "Meeting Description: ";
             // 
-            // descriptionTextbox
+            // datePicker
             // 
-            this.descriptionTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTextbox.Location = new System.Drawing.Point(302, 307);
-            this.descriptionTextbox.Multiline = true;
-            this.descriptionTextbox.Name = "descriptionTextbox";
-            this.descriptionTextbox.Size = new System.Drawing.Size(381, 115);
-            this.descriptionTextbox.TabIndex = 26;
+            this.datePicker.CustomFormat = "yyyy-mm-dd";
+            this.datePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Location = new System.Drawing.Point(302, 151);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(364, 27);
+            this.datePicker.TabIndex = 23;
+            this.datePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            // 
+            // durationLabel
+            // 
+            this.durationLabel.AutoSize = true;
+            this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLabel.Location = new System.Drawing.Point(299, 309);
+            this.durationLabel.Name = "durationLabel";
+            this.durationLabel.Size = new System.Drawing.Size(255, 19);
+            this.durationLabel.TabIndex = 22;
+            this.durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             // 
             // messageGroupbox
             // 
             this.messageGroupbox.Controls.Add(this.messageText);
             this.messageGroupbox.Controls.Add(this.statusText);
             this.messageGroupbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageGroupbox.Location = new System.Drawing.Point(53, 787);
+            this.messageGroupbox.Location = new System.Drawing.Point(53, 809);
             this.messageGroupbox.Name = "messageGroupbox";
             this.messageGroupbox.Size = new System.Drawing.Size(753, 100);
             this.messageGroupbox.TabIndex = 26;
@@ -369,29 +383,15 @@
             this.meetingGridView.Size = new System.Drawing.Size(1008, 667);
             this.meetingGridView.TabIndex = 10;
             // 
-            // endTimePicker
+            // label7
             // 
-            this.endTimePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss";
-            this.endTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.endTimePicker.Location = new System.Drawing.Point(508, 199);
-            this.endTimePicker.Name = "endTimePicker";
-            this.endTimePicker.ShowUpDown = true;
-            this.endTimePicker.Size = new System.Drawing.Size(175, 27);
-            this.endTimePicker.TabIndex = 27;
-            this.endTimePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
-            // 
-            // startTimePicker
-            // 
-            this.startTimePicker.CustomFormat = "";
-            this.startTimePicker.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.startTimePicker.Location = new System.Drawing.Point(508, 148);
-            this.startTimePicker.Name = "startTimePicker";
-            this.startTimePicker.ShowUpDown = true;
-            this.startTimePicker.Size = new System.Drawing.Size(175, 27);
-            this.startTimePicker.TabIndex = 28;
-            this.startTimePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(139, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 19);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Meeting Date: ";
             // 
             // MeetingDashboard
             // 
@@ -445,8 +445,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label durationLabel;
-        private System.Windows.Forms.DateTimePicker startDatePicker;
-        private System.Windows.Forms.DateTimePicker endDatePicker;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox descriptionTextbox;
         private System.Windows.Forms.GroupBox messageGroupbox;
@@ -455,5 +454,6 @@
         private System.Windows.Forms.DataGridView meetingGridView;
         private System.Windows.Forms.DateTimePicker startTimePicker;
         private System.Windows.Forms.DateTimePicker endTimePicker;
+        private System.Windows.Forms.Label label7;
     }
 }

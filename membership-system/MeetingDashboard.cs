@@ -16,6 +16,7 @@ namespace membership_system
 
         private string query;
         private string session;
+        private Boolean insertMeetingData;
 
         public MeetingDashboard(string session)
         {
@@ -26,6 +27,7 @@ namespace membership_system
         private void MeetingDashboard_Load(object sender, EventArgs e)
         {
             displayAllField();
+            disablePastDates();
         }
 
         private void displayAllField()
@@ -71,9 +73,8 @@ namespace membership_system
         {
             nameTextbox.Text = "";
             locationTextbox.Text = "";
-            startDatePicker.Text = DateTime.Now.ToString();
+            datePicker.Text = DateTime.Now.ToString();
             startTimePicker.Text = DateTime.Now.ToString();
-            endDatePicker.Text = DateTime.Now.ToString();
             endTimePicker.Text = DateTime.Now.ToString();
             durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             descriptionTextbox.Text = "";
@@ -85,9 +86,83 @@ namespace membership_system
             searchTextbox.Text = "";
         }
 
+        private void validateEmptyField()
+        {
+            if (string.IsNullOrWhiteSpace(nameTextbox.Text) || string.IsNullOrWhiteSpace(locationTextbox.Text) || 
+                string.IsNullOrWhiteSpace(descriptionTextbox.Text))
+            {
+                insertMeetingData = false;
+            }
+            else
+            {
+                insertMeetingData = true;
+            }
+        }
+
+        private void disablePastDates()
+        {
+            datePicker.MinDate = DateTime.Now;
+            startTimePicker.MinDate = DateTime.Now;
+            endTimePicker.MinDate = DateTime.Now;
+        }
+
         private void addButton_Click(object sender, EventArgs e)
         {
-            Meeting m = new Meeting();
+
+            validateEmptyField();
+            if (insertMeetingData)
+            {
+                Meeting m = new Meeting(session);
+                m.setName(nameTextbox.Text);
+                m.setLocation(locationTextbox.Text);
+                m.setStartTime(datePicker.Value, startTimePicker.Value);
+                m.setEndTime(datePicker.Value, endTimePicker.Value);
+                m.setDescription(descriptionTextbox.Text);
+                m.calculateDuration();
+
+                Club club = new Club();
+
+                messageText.Text = m.getStartTime().ToString() + " " + m.getEndTime().ToString() + " " + m.getDuration().ToString();
+
+                /*SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = "insert into dbo.meeting values (" + club.getClubIDFromPresident(session) +
+                    ",'" + m.getMeetingName() + "','" + m.getMeetingDescription() +
+                    "','" + m.getStartTime().ToString() + "','" + m.getEndTime().ToString() + "','" + m.getDuration() + "')";
+                    
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                connect.close();*/
+            }
+            else
+            {
+                MessageBox.Show("Your action is INVALID because some field is empty or wrong");
+
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong ! ";
+            }
+        }
+
+        private void populateDuration()
+        {
+            Meeting m = new Meeting(session);
+            m.setStartTime(datePicker.Value, startTimePicker.Value);
+            m.setEndTime(datePicker.Value, endTimePicker.Value);
+            durationLabel.Text = m.getDurationText();
+        }
+
+
+        private void endTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            populateDuration();
+        }
+
+        private void startTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            endTimePicker.MinDate = startTimePicker.Value;
 
         }
     }

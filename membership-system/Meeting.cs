@@ -15,11 +15,13 @@ namespace membership_system
         private string description;
         private DateTime startTime;
         private DateTime endTime;
-        private decimal meetingDuration;
+        private string session;
+        private TimeSpan duration;
+        private string durationString;
 
-        public Meeting()
+        public Meeting(string session)
         {
-
+            this.session = session;
         }
 
         public void setName(string name)
@@ -49,8 +51,7 @@ namespace membership_system
 
         public void calculateDuration()
         {
-            DateTime duration = Convert.ToDateTime(endTime - startTime);
-            this.meetingDuration = Convert.ToDecimal(duration);
+            duration = (endTime - startTime);
         }
 
         public string getMeetingName()
@@ -68,28 +69,38 @@ namespace membership_system
             return description;
         }
 
-        public string getStartTime()
+        public DateTime getStartTime()
         {
-            return startTime.ToString();
+            return startTime.ToUniversalTime();
         }
 
-        public string getEndTime()
+        public DateTime getEndTime()
         {
-            return endTime.ToString();
+            return endTime.ToUniversalTime();
         }
 
-        public decimal getDuration()
+        public int getDuration()
         {
-            return meetingDuration;
+            return Convert.ToInt32(duration.TotalSeconds);
         }
 
-        public int getMeetingID(string meetingName)
+        public string getDurationText()
         {
+            calculateDuration();
+            durationString = String.Format("{0} hours, {1} minutes, {2} seconds", duration.Hours, duration.Minutes, duration.Seconds);
+            return durationString;
+
+        }
+
+        public int getMeetingID()
+        {
+            Club club = new Club();
             SqlConn connect = new SqlConn();
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            //command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" + meetingName + "' and club_id = ";
+            command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" + 
+                getMeetingName() + "' and club_id = " + club.getClubIDFromPresident(session);
 
             SqlDataReader reader = command.ExecuteReader();
 
