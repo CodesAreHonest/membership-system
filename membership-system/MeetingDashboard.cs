@@ -23,6 +23,13 @@ namespace membership_system
         {
             InitializeComponent();
             this.session = session;
+            headerDisplay();
+        }
+
+        private void headerDisplay()
+        {
+            Club club = new Club();
+            welcomeMessage.Text = club.getClubNameDisplay(session) + "'s Meeting Dashboard";
         }
 
         private void MeetingDashboard_Load(object sender, EventArgs e)
