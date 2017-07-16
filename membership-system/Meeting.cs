@@ -15,11 +15,13 @@ namespace membership_system
         private string description;
         private DateTime startTime;
         private DateTime endTime;
-        private decimal meetingDuration;
+        private string session;
+        private TimeSpan duration;
+        private string durationString;
 
-        public Meeting()
+        public Meeting(string session)
         {
-
+            this.session = session;
         }
 
         public void setName(string name)
@@ -37,20 +39,19 @@ namespace membership_system
             this.description = description;
         }
 
-        public void setStartTime(string startTime)
+        public void setStartTime(DateTime startDate, DateTime startTime)
         {
-            this.startTime = Convert.ToDateTime(startTime);
+            this.startTime = startDate.Date + startTime.TimeOfDay;
         }
 
-        public void setEndTime(string endTime)
+        public void setEndTime(DateTime endDate, DateTime endTime)
         {
-            this.endTime = Convert.ToDateTime(endTime);
+            this.endTime = endDate.Date + endTime.TimeOfDay;
         }
 
         public void calculateDuration()
         {
-            DateTime duration = Convert.ToDateTime(endTime - startTime);
-            this.meetingDuration = Convert.ToDecimal(duration);
+            duration = (endTime - startTime);
         }
 
         public string getMeetingName()
@@ -70,26 +71,38 @@ namespace membership_system
 
         public string getStartTime()
         {
-            return startTime.ToString();
+            string startTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", startTime.Year, startTime.Month, startTime.Day, startTime.Hour, startTime.Minute, startTime.Second);
+            return startTime_String;
         }
 
         public string getEndTime()
         {
-            return endTime.ToString();
+            string endTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", endTime.Year, endTime.Month, endTime.Day, endTime.Hour, endTime.Minute, endTime.Second);
+            return endTime_String;
         }
 
-        public decimal getDuration()
+        public int getDuration()
         {
-            return meetingDuration;
+            return Convert.ToInt32(duration.TotalSeconds);
+        }
+
+        public string getDurationText()
+        {
+            calculateDuration();
+            durationString = String.Format("{0} hours, {1} minutes, {2} seconds", duration.Hours, duration.Minutes, duration.Seconds);
+            return durationString;
+
         }
 
         public int getMeetingID()
         {
+            Club club = new Club();
             SqlConn connect = new SqlConn();
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            //command.CommandText = "select meeting_id from dbo.Meeting where club_name = " + clubName;
+            command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" + 
+                getMeetingName() + "' and club_id = " + club.getClubIDFromPresident(session);
 
             SqlDataReader reader = command.ExecuteReader();
 

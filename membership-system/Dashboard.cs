@@ -15,6 +15,7 @@ namespace membership_system
     {
         private string session; // register session with president name
         private string clubname; // register session with club only happens after register
+
         public Dashboard(string session, string clubname)
         {
             InitializeComponent();
@@ -96,8 +97,8 @@ namespace membership_system
 
         private void inviteMeetingButton_Click(object sender, EventArgs e)
         {
-            SendMeeting sm = new SendMeeting();
-            sm.ShowDialog();
+            MeetingDashboard md = new MeetingDashboard(session);
+            md.ShowDialog();
         }
 
         private void cr8meetingReport_Click(object sender, EventArgs e)
