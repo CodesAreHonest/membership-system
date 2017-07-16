@@ -17,6 +17,7 @@ namespace membership_system
         private string query;
         private string session;
         private Boolean insertMeetingData;
+        private int meetingID;
 
         public MeetingDashboard(string session)
         {
@@ -180,6 +181,21 @@ namespace membership_system
         private void updateButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void meetingGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            nameTextbox.Text = meetingGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            locationTextbox.Text = meetingGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            descriptionTextbox.Text = meetingGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            datePicker.Text = meetingGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            startTimePicker.Text = meetingGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            endTimePicker.Text = meetingGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            Meeting m = new Meeting(session);
+            m.setName(nameTextbox.Text);
+
+            meetingID = m.getMeetingID();
         }
     }
 }

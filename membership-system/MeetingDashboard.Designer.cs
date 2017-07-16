@@ -394,6 +394,7 @@
             this.meetingGridView.RowTemplate.Height = 24;
             this.meetingGridView.Size = new System.Drawing.Size(1008, 667);
             this.meetingGridView.TabIndex = 10;
+            this.meetingGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.meetingGridView_RowHeaderMouseClick);
             // 
             // MeetingDashboard
             // 
