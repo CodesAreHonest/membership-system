@@ -122,19 +122,26 @@ namespace membership_system
 
                 Club club = new Club();
 
-                messageText.Text = m.getStartTime().ToString() + " " + m.getEndTime().ToString() + " " + m.getDuration().ToString();
+                messageText.Text = m.getMeetingName();
 
-                /*SqlConn connect = new SqlConn();
+                SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
                 command.CommandText = "insert into dbo.meeting values (" + club.getClubIDFromPresident(session) +
-                    ",'" + m.getMeetingName() + "','" + m.getMeetingDescription() +
-                    "','" + m.getStartTime().ToString() + "','" + m.getEndTime().ToString() + "','" + m.getDuration() + "')";
+                    ",'" + m.getMeetingName() + "','" + m.getMeetingLocation() + "','" + m.getMeetingDescription() +
+                    "','" + m.getStartTime() + "','" + m.getEndTime() + "'," + m.getDuration() + ")";
                     
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
-                connect.close();*/
+                connect.close();
+
+                // success message
+                messageText.ForeColor = System.Drawing.Color.Green;
+                messageText.Text = "Create meeting successful. ";
+
+                displayAllField();
+                clearField();
             }
             else
             {

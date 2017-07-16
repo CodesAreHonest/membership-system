@@ -69,14 +69,16 @@ namespace membership_system
             return description;
         }
 
-        public DateTime getStartTime()
+        public string getStartTime()
         {
-            return startTime.ToUniversalTime();
+            string startTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", startTime.Year, startTime.Month, startTime.Day, startTime.Hour, startTime.Minute, startTime.Second);
+            return startTime_String;
         }
 
-        public DateTime getEndTime()
+        public string getEndTime()
         {
-            return endTime.ToUniversalTime();
+            string endTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", startTime.Year, startTime.Month, startTime.Day, startTime.Hour, startTime.Minute, startTime.Second);
+            return endTime_String;
         }
 
         public int getDuration()
