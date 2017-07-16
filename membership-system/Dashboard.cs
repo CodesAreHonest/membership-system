@@ -83,18 +83,6 @@ namespace membership_system
             cf.ShowDialog();
         }
 
-        private void createMeetingButton_Click(object sender, EventArgs e)
-        {
-            CreateMeeting cm = new CreateMeeting();
-            cm.ShowDialog(); 
-        }
-
-        private void editMeetingButton_Click(object sender, EventArgs e)
-        {
-            EditMeeting em = new EditMeeting();
-            em.ShowDialog();
-        }
-
         private void inviteMeetingButton_Click(object sender, EventArgs e)
         {
             MeetingDashboard md = new MeetingDashboard(session);

@@ -58,11 +58,9 @@ C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system.exe
 C:\gitRepo\membership-system\membership-system\bin\Debug\membership-system.pdb
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.ClubFees.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.ClubRegistration.resources
-C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.CreateMeeting.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.Dashboard.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.DeleteAttendance.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.EditAttendance.resources
-C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.EditMeeting.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.MemberDashboard.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.PrintAttendance.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.PrintMeeting.resources
@@ -70,7 +68,6 @@ C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.Login
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.Properties.Resources.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.RecordAttendance.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.Register.resources
-C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.SendMeeting.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserEditAccount.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership_system.UserEditSociety.resources
 C:\gitRepo\membership-system\membership-system\obj\Debug\membership-system.csproj.GenerateResource.Cache

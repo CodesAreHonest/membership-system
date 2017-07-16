@@ -74,12 +74,6 @@
     <Compile Include="ClubRegistration.Designer.cs">
       <DependentUpon>ClubRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateMeeting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateMeeting.Designer.cs">
-      <DependentUpon>CreateMeeting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +91,6 @@
     </Compile>
     <Compile Include="EditAttendance.Designer.cs">
       <DependentUpon>EditAttendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditMeeting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditMeeting.Designer.cs">
-      <DependentUpon>EditMeeting.cs</DependentUpon>
     </Compile>
     <Compile Include="Fee.cs" />
     <Compile Include="MeetingDashboard.cs">
@@ -152,12 +140,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendMeeting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SendMeeting.Designer.cs">
-      <DependentUpon>SendMeeting.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlConn.cs" />
     <Compile Include="UserEditAccount.cs">
       <SubType>Form</SubType>
@@ -177,9 +159,6 @@
     <EmbeddedResource Include="ClubRegistration.resx">
       <DependentUpon>ClubRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateMeeting.resx">
-      <DependentUpon>CreateMeeting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,9 +167,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditAttendance.resx">
       <DependentUpon>EditAttendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditMeeting.resx">
-      <DependentUpon>EditMeeting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeetingDashboard.resx">
       <DependentUpon>MeetingDashboard.cs</DependentUpon>
@@ -221,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SendMeeting.resx">
-      <DependentUpon>SendMeeting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserEditAccount.resx">
       <DependentUpon>UserEditAccount.cs</DependentUpon>
