@@ -46,6 +46,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.startTimePicker = new System.Windows.Forms.DateTimePicker();
             this.endTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descriptionTextbox = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
             this.meetingGridView = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -169,6 +169,7 @@
             this.updateButton.TabIndex = 20;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // label2
             // 
@@ -276,6 +277,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Meeting Details ";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(139, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 19);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Meeting Date: ";
+            // 
             // startTimePicker
             // 
             this.startTimePicker.CustomFormat = "";
@@ -330,6 +341,7 @@
             this.datePicker.Size = new System.Drawing.Size(364, 27);
             this.datePicker.TabIndex = 23;
             this.datePicker.Value = new System.DateTime(2017, 7, 14, 23, 15, 45, 0);
+            this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
             // 
             // durationLabel
             // 
@@ -382,16 +394,6 @@
             this.meetingGridView.RowTemplate.Height = 24;
             this.meetingGridView.Size = new System.Drawing.Size(1008, 667);
             this.meetingGridView.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(139, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 19);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "Meeting Date: ";
             // 
             // MeetingDashboard
             // 

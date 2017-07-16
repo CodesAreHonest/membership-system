@@ -77,7 +77,7 @@ namespace membership_system
 
         public string getEndTime()
         {
-            string endTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", startTime.Year, startTime.Month, startTime.Day, startTime.Hour, startTime.Minute, startTime.Second);
+            string endTime_String = String.Format("{0}-{1}-{2} {3}:{4}:{5}", endTime.Year, endTime.Month, endTime.Day, endTime.Hour, endTime.Minute, endTime.Second);
             return endTime_String;
         }
 

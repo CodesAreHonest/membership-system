@@ -122,8 +122,6 @@ namespace membership_system
 
                 Club club = new Club();
 
-                messageText.Text = m.getMeetingName();
-
                 SqlConn connect = new SqlConn();
                 connect.open();
                 SqlCommand command = new SqlCommand();
@@ -171,6 +169,17 @@ namespace membership_system
         {
             endTimePicker.MinDate = startTimePicker.Value;
 
+        }
+
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+            startTimePicker.MinDate = datePicker.Value.Date;
+            endTimePicker.MinDate = datePicker.Value.Date;
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
