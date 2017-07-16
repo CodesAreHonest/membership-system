@@ -35,8 +35,6 @@
             this.editSocietySelection = new System.Windows.Forms.ToolStripMenuItem();
             this.editAccountSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageMeeting = new System.Windows.Forms.Button();
-            this.manageAttendance = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -58,7 +56,6 @@
             this.deleteAttendance = new System.Windows.Forms.Button();
             this.recordAttendance = new System.Windows.Forms.Button();
             this.editAttendance = new System.Windows.Forms.Button();
-            this.manageMember = new System.Windows.Forms.Button();
             this.registerStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -132,30 +129,6 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // manageMeeting
-            // 
-            this.manageMeeting.BackColor = System.Drawing.Color.SkyBlue;
-            this.manageMeeting.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageMeeting.Location = new System.Drawing.Point(779, 67);
-            this.manageMeeting.Name = "manageMeeting";
-            this.manageMeeting.Size = new System.Drawing.Size(209, 40);
-            this.manageMeeting.TabIndex = 5;
-            this.manageMeeting.Text = "Manage Meeting";
-            this.manageMeeting.UseVisualStyleBackColor = false;
-            this.manageMeeting.Click += new System.EventHandler(this.manageMeeting_Click);
-            // 
-            // manageAttendance
-            // 
-            this.manageAttendance.BackColor = System.Drawing.Color.SkyBlue;
-            this.manageAttendance.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageAttendance.Location = new System.Drawing.Point(998, 67);
-            this.manageAttendance.Name = "manageAttendance";
-            this.manageAttendance.Size = new System.Drawing.Size(209, 40);
-            this.manageAttendance.TabIndex = 6;
-            this.manageAttendance.Text = "Manage Attendance";
-            this.manageAttendance.UseVisualStyleBackColor = false;
-            this.manageAttendance.Click += new System.EventHandler(this.manageAttendance_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -213,16 +186,16 @@
             this.memberPanel.Controls.Add(this.mDashboardButton);
             this.memberPanel.Controls.Add(this.memberStrip);
             this.memberPanel.Controls.Add(this.button4);
-            this.memberPanel.Location = new System.Drawing.Point(555, 118);
+            this.memberPanel.Location = new System.Drawing.Point(558, 153);
             this.memberPanel.Name = "memberPanel";
-            this.memberPanel.Size = new System.Drawing.Size(653, 211);
+            this.memberPanel.Size = new System.Drawing.Size(653, 110);
             this.memberPanel.TabIndex = 8;
             // 
             // mDashboardButton
             // 
             this.mDashboardButton.BackColor = System.Drawing.Color.SkyBlue;
             this.mDashboardButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mDashboardButton.Location = new System.Drawing.Point(78, 78);
+            this.mDashboardButton.Location = new System.Drawing.Point(70, 43);
             this.mDashboardButton.Name = "mDashboardButton";
             this.mDashboardButton.Size = new System.Drawing.Size(214, 40);
             this.mDashboardButton.TabIndex = 10;
@@ -254,7 +227,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.SkyBlue;
             this.button4.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(356, 78);
+            this.button4.Location = new System.Drawing.Point(357, 43);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(214, 40);
             this.button4.TabIndex = 8;
@@ -269,9 +242,9 @@
             this.meetingPanel.Controls.Add(this.meetingStrips);
             this.meetingPanel.Controls.Add(this.cr8meetingReport);
             this.meetingPanel.Controls.Add(this.inviteMeetingButton);
-            this.meetingPanel.Location = new System.Drawing.Point(554, 238);
+            this.meetingPanel.Location = new System.Drawing.Point(558, 288);
             this.meetingPanel.Name = "meetingPanel";
-            this.meetingPanel.Size = new System.Drawing.Size(653, 217);
+            this.meetingPanel.Size = new System.Drawing.Size(653, 108);
             this.meetingPanel.TabIndex = 10;
             // 
             // meetingStrips
@@ -298,7 +271,7 @@
             // 
             this.cr8meetingReport.BackColor = System.Drawing.Color.SkyBlue;
             this.cr8meetingReport.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cr8meetingReport.Location = new System.Drawing.Point(357, 70);
+            this.cr8meetingReport.Location = new System.Drawing.Point(358, 45);
             this.cr8meetingReport.Name = "cr8meetingReport";
             this.cr8meetingReport.Size = new System.Drawing.Size(214, 40);
             this.cr8meetingReport.TabIndex = 8;
@@ -310,7 +283,7 @@
             // 
             this.inviteMeetingButton.BackColor = System.Drawing.Color.SkyBlue;
             this.inviteMeetingButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inviteMeetingButton.Location = new System.Drawing.Point(79, 70);
+            this.inviteMeetingButton.Location = new System.Drawing.Point(71, 45);
             this.inviteMeetingButton.Name = "inviteMeetingButton";
             this.inviteMeetingButton.Size = new System.Drawing.Size(214, 40);
             this.inviteMeetingButton.TabIndex = 5;
@@ -327,9 +300,9 @@
             this.attendancePanel.Controls.Add(this.deleteAttendance);
             this.attendancePanel.Controls.Add(this.recordAttendance);
             this.attendancePanel.Controls.Add(this.editAttendance);
-            this.attendancePanel.Location = new System.Drawing.Point(554, 335);
+            this.attendancePanel.Location = new System.Drawing.Point(557, 425);
             this.attendancePanel.Name = "attendancePanel";
-            this.attendancePanel.Size = new System.Drawing.Size(653, 211);
+            this.attendancePanel.Size = new System.Drawing.Size(651, 160);
             this.attendancePanel.TabIndex = 11;
             // 
             // attendanceStrips
@@ -340,7 +313,7 @@
             this.toolStripLabel4});
             this.attendanceStrips.Location = new System.Drawing.Point(0, 0);
             this.attendanceStrips.Name = "attendanceStrips";
-            this.attendanceStrips.Size = new System.Drawing.Size(651, 25);
+            this.attendanceStrips.Size = new System.Drawing.Size(649, 25);
             this.attendanceStrips.TabIndex = 9;
             this.attendanceStrips.Text = "toolStrip4";
             // 
@@ -400,30 +373,15 @@
             this.editAttendance.UseVisualStyleBackColor = false;
             this.editAttendance.Click += new System.EventHandler(this.editAttendance_Click);
             // 
-            // manageMember
-            // 
-            this.manageMember.BackColor = System.Drawing.Color.SkyBlue;
-            this.manageMember.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageMember.Location = new System.Drawing.Point(554, 67);
-            this.manageMember.Name = "manageMember";
-            this.manageMember.Size = new System.Drawing.Size(209, 40);
-            this.manageMember.TabIndex = 12;
-            this.manageMember.Text = "Manage Member";
-            this.manageMember.UseVisualStyleBackColor = false;
-            this.manageMember.Click += new System.EventHandler(this.manageMember_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 597);
-            this.Controls.Add(this.manageMember);
             this.Controls.Add(this.attendancePanel);
             this.Controls.Add(this.meetingPanel);
             this.Controls.Add(this.memberPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.manageAttendance);
-            this.Controls.Add(this.manageMeeting);
             this.Controls.Add(this.registerStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Dashboard";
@@ -459,8 +417,6 @@
         private System.Windows.Forms.ToolStripDropDownButton dashboardAction;
         private System.Windows.Forms.ToolStripMenuItem editSocietySelection;
         private System.Windows.Forms.ToolStripMenuItem editAccountSelection;
-        private System.Windows.Forms.Button manageMeeting;
-        private System.Windows.Forms.Button manageAttendance;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
@@ -480,7 +436,6 @@
         private System.Windows.Forms.Button deleteAttendance;
         private System.Windows.Forms.Button recordAttendance;
         private System.Windows.Forms.Button editAttendance;
-        private System.Windows.Forms.Button manageMember;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button mDashboardButton;
