@@ -240,5 +240,47 @@ namespace membership_system
 
             meetingID = m.getMeetingID();
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            validateEmptyField();
+            if (insertMeetingData)
+            {
+                Meeting m = new Meeting(session);
+                m.setName(nameTextbox.Text);
+                m.setLocation(locationTextbox.Text);
+                m.setStartTime(datePicker.Value, startTimePicker.Value);
+                m.setEndTime(datePicker.Value, endTimePicker.Value);
+                m.setDescription(descriptionTextbox.Text);
+                m.calculateDuration();
+
+                Club club = new Club();
+
+                SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = "delete dbo.meeting where meeting_id = " + m.getMeetingID() + " and club_id = " + club.getClubIDFromPresident(session);
+
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                connect.close();
+
+                // success message
+                messageText.ForeColor = System.Drawing.Color.Green;
+                messageText.Text = "Delete meeting details successful. ";
+
+                displayAllField();
+                clearField();
+            }
+            else
+            {
+                MessageBox.Show("Your Delete action is INVALID because you did not specifiy a meeting details");
+
+                // warning message
+                messageText.ForeColor = System.Drawing.Color.Red;
+                messageText.Text = "Your Delete action is INVALID because you did not specifiy a meeting details";
+            }
+        }
     }
 }
