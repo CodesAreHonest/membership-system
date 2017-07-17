@@ -13,11 +13,16 @@ namespace membership_system
         private string name;
         private string location;
         private string description;
+
+        private DateTime startDate;
+        private DateTime endDate;
         private DateTime startTime;
         private DateTime endTime;
         private string session;
         private TimeSpan duration;
+        private TimeSpan reportDuration;
         private string durationString;
+        private string durationText;
 
         public Meeting(string session)
         {
@@ -49,9 +54,42 @@ namespace membership_system
             this.endTime = endDate.Date + endTime.TimeOfDay;
         }
 
+        public void setStartDate(DateTime startDate)
+        {
+            this.startDate = startDate;
+        }
+
+        public void setEndDate(DateTime endDate)
+        {
+            this.endDate = endDate;
+        }
+
+        public DateTime getStartDate()
+        {
+            return startDate;
+        }
+
+        public DateTime getEndDate()
+        {
+            return endDate;
+        }
+
         public void calculateDuration()
         {
             duration = (endTime - startTime);
+        }
+
+        // for generate report summary use only
+        public void calculateReportDuration()
+        {
+            reportDuration = (endDate - startDate);
+        }
+
+        public string getReportDurationText()
+        {
+            calculateReportDuration();
+            durationText = String.Format("{0} hours, {1} minutes, {2} seconds", reportDuration.Hours, reportDuration.Minutes, reportDuration.Seconds);
+            return durationText;
         }
 
         public string getMeetingName()
@@ -116,7 +154,7 @@ namespace membership_system
 
             return meetingID;
         }
-    
+     
 
     }
 }
