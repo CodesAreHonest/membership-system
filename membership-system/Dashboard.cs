@@ -91,7 +91,7 @@ namespace membership_system
 
         private void cr8meetingReport_Click(object sender, EventArgs e)
         {
-            PrintMeeting mr = new PrintMeeting();
+            PrintMeeting mr = new PrintMeeting(session);
             mr.ShowDialog();
         }
 

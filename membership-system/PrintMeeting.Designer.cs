@@ -42,11 +42,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.locationLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.startTimeLabel = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.startTimeLabel = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.locationLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.registerStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.meetingGridView)).BeginInit();
@@ -93,9 +93,9 @@
             // 
             this.meetingNameComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.meetingNameComboBox.FormattingEnabled = true;
-            this.meetingNameComboBox.Location = new System.Drawing.Point(196, 68);
+            this.meetingNameComboBox.Location = new System.Drawing.Point(207, 68);
             this.meetingNameComboBox.Name = "meetingNameComboBox";
-            this.meetingNameComboBox.Size = new System.Drawing.Size(292, 32);
+            this.meetingNameComboBox.Size = new System.Drawing.Size(378, 32);
             this.meetingNameComboBox.TabIndex = 10;
             // 
             // meetingGridView
@@ -212,35 +212,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Meeting Details ";
             // 
-            // locationLabel
+            // descriptionLabel
             // 
-            this.locationLabel.AutoSize = true;
-            this.locationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationLabel.Location = new System.Drawing.Point(259, 51);
-            this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(71, 19);
-            this.locationLabel.TabIndex = 31;
-            this.locationLabel.Text = "location";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(944, 51);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(43, 19);
-            this.dateLabel.TabIndex = 32;
-            this.dateLabel.Text = "date";
-            // 
-            // startTimeLabel
-            // 
-            this.startTimeLabel.AutoSize = true;
-            this.startTimeLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimeLabel.Location = new System.Drawing.Point(944, 87);
-            this.startTimeLabel.Name = "startTimeLabel";
-            this.startTimeLabel.Size = new System.Drawing.Size(84, 19);
-            this.startTimeLabel.TabIndex = 33;
-            this.startTimeLabel.Text = "start time";
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(256, 121);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(97, 19);
+            this.descriptionLabel.TabIndex = 35;
+            this.descriptionLabel.Text = "description";
             // 
             // label13
             // 
@@ -252,21 +232,41 @@
             this.label13.TabIndex = 34;
             this.label13.Text = "end time";
             // 
-            // descriptionLabel
+            // startTimeLabel
             // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(256, 121);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(97, 19);
-            this.descriptionLabel.TabIndex = 35;
-            this.descriptionLabel.Text = "description";
+            this.startTimeLabel.AutoSize = true;
+            this.startTimeLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startTimeLabel.Location = new System.Drawing.Point(944, 87);
+            this.startTimeLabel.Name = "startTimeLabel";
+            this.startTimeLabel.Size = new System.Drawing.Size(84, 19);
+            this.startTimeLabel.TabIndex = 33;
+            this.startTimeLabel.Text = "start time";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(944, 51);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(43, 19);
+            this.dateLabel.TabIndex = 32;
+            this.dateLabel.Text = "date";
+            // 
+            // locationLabel
+            // 
+            this.locationLabel.AutoSize = true;
+            this.locationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLabel.Location = new System.Drawing.Point(259, 51);
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(71, 19);
+            this.locationLabel.TabIndex = 31;
+            this.locationLabel.Text = "location";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(516, 66);
+            this.button1.Location = new System.Drawing.Point(647, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 35);
             this.button1.TabIndex = 24;

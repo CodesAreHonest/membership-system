@@ -186,9 +186,9 @@
             this.memberPanel.Controls.Add(this.mDashboardButton);
             this.memberPanel.Controls.Add(this.memberStrip);
             this.memberPanel.Controls.Add(this.button4);
-            this.memberPanel.Location = new System.Drawing.Point(558, 153);
+            this.memberPanel.Location = new System.Drawing.Point(557, 84);
             this.memberPanel.Name = "memberPanel";
-            this.memberPanel.Size = new System.Drawing.Size(653, 110);
+            this.memberPanel.Size = new System.Drawing.Size(653, 108);
             this.memberPanel.TabIndex = 8;
             // 
             // mDashboardButton
@@ -242,9 +242,9 @@
             this.meetingPanel.Controls.Add(this.meetingStrips);
             this.meetingPanel.Controls.Add(this.cr8meetingReport);
             this.meetingPanel.Controls.Add(this.inviteMeetingButton);
-            this.meetingPanel.Location = new System.Drawing.Point(558, 288);
+            this.meetingPanel.Location = new System.Drawing.Point(558, 239);
             this.meetingPanel.Name = "meetingPanel";
-            this.meetingPanel.Size = new System.Drawing.Size(653, 108);
+            this.meetingPanel.Size = new System.Drawing.Size(653, 113);
             this.meetingPanel.TabIndex = 10;
             // 
             // meetingStrips
@@ -300,9 +300,9 @@
             this.attendancePanel.Controls.Add(this.deleteAttendance);
             this.attendancePanel.Controls.Add(this.recordAttendance);
             this.attendancePanel.Controls.Add(this.editAttendance);
-            this.attendancePanel.Location = new System.Drawing.Point(557, 425);
+            this.attendancePanel.Location = new System.Drawing.Point(557, 396);
             this.attendancePanel.Name = "attendancePanel";
-            this.attendancePanel.Size = new System.Drawing.Size(651, 160);
+            this.attendancePanel.Size = new System.Drawing.Size(651, 189);
             this.attendancePanel.TabIndex = 11;
             // 
             // attendanceStrips
