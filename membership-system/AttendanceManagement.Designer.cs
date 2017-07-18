@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.registerStrip = new System.Windows.Forms.ToolStrip();
             this.welcomeMessage = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -68,7 +68,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(1214, 43);
+            this.registerStrip.Size = new System.Drawing.Size(1190, 43);
             this.registerStrip.TabIndex = 5;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -135,8 +135,8 @@
             this.attendanceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.attendanceList.Location = new System.Drawing.Point(176, 133);
             this.attendanceList.Name = "attendanceList";
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.attendanceList.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.attendanceList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.attendanceList.RowTemplate.Height = 24;
             this.attendanceList.Size = new System.Drawing.Size(760, 485);
             this.attendanceList.TabIndex = 26;
@@ -197,8 +197,8 @@
             this.attendanceList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.attendanceList1.Location = new System.Drawing.Point(180, 131);
             this.attendanceList1.Name = "attendanceList1";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.attendanceList1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.attendanceList1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.attendanceList1.RowTemplate.Height = 24;
             this.attendanceList1.Size = new System.Drawing.Size(760, 553);
             this.attendanceList1.TabIndex = 27;
@@ -251,14 +251,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 810);
+            this.ClientSize = new System.Drawing.Size(1190, 810);
             this.Controls.Add(this.attendanceTab);
             this.Controls.Add(this.registerStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "AttendanceManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AttendanceManagement";
+            this.Text = "Membership System";
             this.registerStrip.ResumeLayout(false);
             this.registerStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
