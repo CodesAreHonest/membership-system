@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace membership_system
 {
@@ -15,13 +18,15 @@ namespace membership_system
     {
         private string session;
         private string query;
+        Bitmap bmp;
+
+
 
         public PrintMeeting(string session)
         {
             InitializeComponent();
             this.session = session;
             loadClubCombobox();
-
         }
 
         public void loadClubCombobox()
@@ -127,5 +132,43 @@ namespace membership_system
         }
 
 
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            /*Graphics g = this.CreateGraphics();
+            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+            Graphics mg = Graphics.FromImage(bmp);
+            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+            printPreviewDialog1.ShowDialog();*/
+
+
+            printPreviewDialog1.ShowDialog();
+            PrintDocument doc = new PrintDocument();
+            doc.PrintPage += this.printDocument1_PrintPage;
+            PrintDialog dlgSettings = new PrintDialog();
+            dlgSettings.Document = doc;
+            if (dlgSettings.ShowDialog() == DialogResult.OK)
+            {
+                doc.Print();
+            }
+
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            float x = e.MarginBounds.Left;
+            float y = e.MarginBounds.Top;
+
+            Graphics g = this.CreateGraphics();
+            Bitmap bmp = new Bitmap(this.panel1.Width, this.panel1.Height, g);
+            this.panel1.DrawToBitmap(bmp, new Rectangle(0, 0, this.panel1.Width, this.panel1.Height));
+
+            e.Graphics.TranslateTransform((float)this.panel1.Width / 2, (float)this.panel1.Height / 2);
+            //rotate
+            e.Graphics.RotateTransform(90);
+            //move image back
+            e.Graphics.TranslateTransform(-(float)this.panel1.Width / 3, -(float)this.panel1.Height / 2);
+            e.Graphics.DrawImage((Image)bmp, x, y);
+        }
     }
 }
