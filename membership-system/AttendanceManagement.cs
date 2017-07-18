@@ -54,9 +54,7 @@ namespace membership_system
         // display data in datagridview base on query
         private void displayData(string query)
         {
-            
-
-
+           
             try
             {
                 SqlConn connect = new SqlConn();
@@ -87,9 +85,10 @@ namespace membership_system
             chk.Name = "CheckBox";
             attendanceList.Columns.Add(chk);
 
-
-
-
+            foreach (DataGridViewColumn dc in attendanceList.Columns)
+            {
+                dc.ReadOnly = (dc.Index.Equals(4)) ? false : true;
+            }
 
         }
 
