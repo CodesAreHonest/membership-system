@@ -10,16 +10,19 @@ using System.Windows.Forms;
 
 namespace membership_system
 {
-    public partial class EditAttendance : Form
+    public partial class AttendanceManagement : Form
     {
-        public EditAttendance()
+        private string session; 
+
+        public AttendanceManagement(string session)
         {
+            this.session = session;
             InitializeComponent();
         }
 
-        private void doneButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
         }
     }
 }

@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttendanceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttendanceManagement.Designer.cs">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Club.cs" />
     <Compile Include="ClubFees.cs">
       <SubType>Form</SubType>
@@ -79,18 +85,6 @@
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteAttendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteAttendance.Designer.cs">
-      <DependentUpon>DeleteAttendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditAttendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditAttendance.Designer.cs">
-      <DependentUpon>EditAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Fee.cs" />
     <Compile Include="MeetingDashboard.cs">
@@ -113,18 +107,6 @@
     </Compile>
     <Compile Include="PrintMeeting.Designer.cs">
       <DependentUpon>PrintMeeting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PrintAttendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrintAttendance.Designer.cs">
-      <DependentUpon>PrintAttendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RecordAttendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecordAttendance.Designer.cs">
-      <DependentUpon>RecordAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -153,6 +135,9 @@
     <Compile Include="UserEditSociety.Designer.cs">
       <DependentUpon>UserEditSociety.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AttendanceManagement.resx">
+      <DependentUpon>AttendanceManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClubFees.resx">
       <DependentUpon>ClubFees.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,20 +147,11 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteAttendance.resx">
-      <DependentUpon>DeleteAttendance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditAttendance.resx">
-      <DependentUpon>EditAttendance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MeetingDashboard.resx">
       <DependentUpon>MeetingDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberDashboard.resx">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrintAttendance.resx">
-      <DependentUpon>PrintAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintMeeting.resx">
       <DependentUpon>PrintMeeting.cs</DependentUpon>
@@ -192,9 +168,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RecordAttendance.resx">
-      <DependentUpon>RecordAttendance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
