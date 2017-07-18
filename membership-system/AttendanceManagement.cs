@@ -128,11 +128,25 @@ namespace membership_system
             }
 
             MessageBox.Show("Your attendance had updated! ");
+            navigation();
 
 
         }
 
+        private void navigation()
+        {
+            attendanceList.DataSource = null;
+            meetingCombobox1.Text = meetingCombobox.Text;
+            searchAttendanceOnDisplay();
+            attendanceTab.SelectedTab = viewAttendanceTab;
+        }
+
         private void searchButton1_Click(object sender, EventArgs e)
+        {
+            searchAttendanceOnDisplay();
+        }
+
+        private void searchAttendanceOnDisplay()
         {
             Club club = new Club();
 
@@ -163,5 +177,6 @@ namespace membership_system
                 MessageBox.Show("" + ex);
             }
         }
+
     }
 }
