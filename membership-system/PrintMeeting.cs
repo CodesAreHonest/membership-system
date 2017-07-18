@@ -27,8 +27,8 @@ namespace membership_system
         public void loadClubCombobox()
         {
             Club club = new Club();
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\gitRepo\membership-system\membership-system-db.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter sda = new SqlDataAdapter("select meeting_name from dbo.meeting where club_id = " + club.getClubIDFromPresident(session), conn);
+            SqlConn sqlConn = new SqlConn();
+            SqlDataAdapter sda = new SqlDataAdapter("select meeting_name from dbo.meeting where club_id = " + club.getClubIDFromPresident(session), sqlConn.sqlConnection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
