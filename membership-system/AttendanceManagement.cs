@@ -178,5 +178,9 @@ namespace membership_system
             }
         }
 
+        private void searchButton_Click_1(object sender, EventArgs e)
+        {
+            displayAllField();
+        }
     }
 }
