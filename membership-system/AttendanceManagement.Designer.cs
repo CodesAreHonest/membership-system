@@ -94,7 +94,7 @@
             this.groupBox1.Size = new System.Drawing.Size(717, 92);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search member add into Meeting here: ";
+            this.groupBox1.Text = "Choose Meeting to record Attendance: ";
             // 
             // meetingCombobox
             // 

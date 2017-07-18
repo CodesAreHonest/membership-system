@@ -23,11 +23,6 @@ namespace membership_system
             loadMeetingCombobox();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            displayAllField();
-        }
-
         public void loadMeetingCombobox()
         {
             Club club = new Club();
