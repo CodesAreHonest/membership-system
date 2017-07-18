@@ -35,10 +35,6 @@
             this.editSocietySelection = new System.Windows.Forms.ToolStripMenuItem();
             this.editAccountSelection = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.memberPanel = new System.Windows.Forms.Panel();
             this.mDashboardButton = new System.Windows.Forms.Button();
             this.memberStrip = new System.Windows.Forms.ToolStrip();
@@ -52,13 +48,8 @@
             this.attendancePanel = new System.Windows.Forms.Panel();
             this.attendanceStrips = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.printAttendance = new System.Windows.Forms.Button();
-            this.deleteAttendance = new System.Windows.Forms.Button();
-            this.recordAttendance = new System.Windows.Forms.Button();
-            this.editAttendance = new System.Windows.Forms.Button();
+            this.attendanceButton = new System.Windows.Forms.Button();
             this.registerStrip.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.memberPanel.SuspendLayout();
             this.memberStrip.SuspendLayout();
             this.meetingPanel.SuspendLayout();
@@ -80,7 +71,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(1236, 43);
+            this.registerStrip.Size = new System.Drawing.Size(1074, 43);
             this.registerStrip.TabIndex = 2;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -129,56 +120,6 @@
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(13, 57);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 528);
-            this.panel1.TabIndex = 7;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(518, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(154, 22);
-            this.toolStripLabel1.Text = "Upcoming Meeting";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 43);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.3089F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.6911F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(480, 465);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // memberPanel
             // 
             this.memberPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -186,7 +127,7 @@
             this.memberPanel.Controls.Add(this.mDashboardButton);
             this.memberPanel.Controls.Add(this.memberStrip);
             this.memberPanel.Controls.Add(this.button4);
-            this.memberPanel.Location = new System.Drawing.Point(557, 84);
+            this.memberPanel.Location = new System.Drawing.Point(213, 101);
             this.memberPanel.Name = "memberPanel";
             this.memberPanel.Size = new System.Drawing.Size(653, 108);
             this.memberPanel.TabIndex = 8;
@@ -242,7 +183,7 @@
             this.meetingPanel.Controls.Add(this.meetingStrips);
             this.meetingPanel.Controls.Add(this.cr8meetingReport);
             this.meetingPanel.Controls.Add(this.inviteMeetingButton);
-            this.meetingPanel.Location = new System.Drawing.Point(558, 239);
+            this.meetingPanel.Location = new System.Drawing.Point(214, 256);
             this.meetingPanel.Name = "meetingPanel";
             this.meetingPanel.Size = new System.Drawing.Size(653, 113);
             this.meetingPanel.TabIndex = 10;
@@ -295,14 +236,11 @@
             // 
             this.attendancePanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.attendancePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.attendancePanel.Controls.Add(this.attendanceButton);
             this.attendancePanel.Controls.Add(this.attendanceStrips);
-            this.attendancePanel.Controls.Add(this.printAttendance);
-            this.attendancePanel.Controls.Add(this.deleteAttendance);
-            this.attendancePanel.Controls.Add(this.recordAttendance);
-            this.attendancePanel.Controls.Add(this.editAttendance);
-            this.attendancePanel.Location = new System.Drawing.Point(557, 396);
+            this.attendancePanel.Location = new System.Drawing.Point(213, 413);
             this.attendancePanel.Name = "attendancePanel";
-            this.attendancePanel.Size = new System.Drawing.Size(651, 189);
+            this.attendancePanel.Size = new System.Drawing.Size(651, 121);
             this.attendancePanel.TabIndex = 11;
             // 
             // attendanceStrips
@@ -325,63 +263,26 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(162, 22);
             this.toolStripLabel4.Text = "Manage Attendance";
             // 
-            // printAttendance
+            // attendanceButton
             // 
-            this.printAttendance.BackColor = System.Drawing.Color.SkyBlue;
-            this.printAttendance.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printAttendance.Location = new System.Drawing.Point(357, 125);
-            this.printAttendance.Name = "printAttendance";
-            this.printAttendance.Size = new System.Drawing.Size(214, 40);
-            this.printAttendance.TabIndex = 8;
-            this.printAttendance.Text = "Print Attendance";
-            this.printAttendance.UseVisualStyleBackColor = false;
-            this.printAttendance.Click += new System.EventHandler(this.printAttendance_Click);
-            // 
-            // deleteAttendance
-            // 
-            this.deleteAttendance.BackColor = System.Drawing.Color.SkyBlue;
-            this.deleteAttendance.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteAttendance.Location = new System.Drawing.Point(79, 125);
-            this.deleteAttendance.Name = "deleteAttendance";
-            this.deleteAttendance.Size = new System.Drawing.Size(214, 40);
-            this.deleteAttendance.TabIndex = 7;
-            this.deleteAttendance.Text = "Delete Attendance";
-            this.deleteAttendance.UseVisualStyleBackColor = false;
-            this.deleteAttendance.Click += new System.EventHandler(this.deleteAttendance_Click);
-            // 
-            // recordAttendance
-            // 
-            this.recordAttendance.BackColor = System.Drawing.Color.SkyBlue;
-            this.recordAttendance.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recordAttendance.Location = new System.Drawing.Point(79, 55);
-            this.recordAttendance.Name = "recordAttendance";
-            this.recordAttendance.Size = new System.Drawing.Size(214, 40);
-            this.recordAttendance.TabIndex = 6;
-            this.recordAttendance.Text = "Record Attendance";
-            this.recordAttendance.UseVisualStyleBackColor = false;
-            this.recordAttendance.Click += new System.EventHandler(this.recordAttendance_Click);
-            // 
-            // editAttendance
-            // 
-            this.editAttendance.BackColor = System.Drawing.Color.SkyBlue;
-            this.editAttendance.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editAttendance.Location = new System.Drawing.Point(357, 55);
-            this.editAttendance.Name = "editAttendance";
-            this.editAttendance.Size = new System.Drawing.Size(214, 40);
-            this.editAttendance.TabIndex = 5;
-            this.editAttendance.Text = "Edit Attendance";
-            this.editAttendance.UseVisualStyleBackColor = false;
-            this.editAttendance.Click += new System.EventHandler(this.editAttendance_Click);
+            this.attendanceButton.BackColor = System.Drawing.Color.SkyBlue;
+            this.attendanceButton.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendanceButton.Location = new System.Drawing.Point(216, 55);
+            this.attendanceButton.Name = "attendanceButton";
+            this.attendanceButton.Size = new System.Drawing.Size(214, 40);
+            this.attendanceButton.TabIndex = 10;
+            this.attendanceButton.Text = "Attendance Management";
+            this.attendanceButton.UseVisualStyleBackColor = false;
+            this.attendanceButton.Click += new System.EventHandler(this.attendanceButton_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 597);
+            this.ClientSize = new System.Drawing.Size(1074, 597);
             this.Controls.Add(this.attendancePanel);
             this.Controls.Add(this.meetingPanel);
             this.Controls.Add(this.memberPanel);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.registerStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Dashboard";
@@ -389,10 +290,6 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.registerStrip.ResumeLayout(false);
             this.registerStrip.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.memberPanel.ResumeLayout(false);
             this.memberPanel.PerformLayout();
             this.memberStrip.ResumeLayout(false);
@@ -417,9 +314,6 @@
         private System.Windows.Forms.ToolStripDropDownButton dashboardAction;
         private System.Windows.Forms.ToolStripMenuItem editSocietySelection;
         private System.Windows.Forms.ToolStripMenuItem editAccountSelection;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.Panel memberPanel;
         private System.Windows.Forms.ToolStrip memberStrip;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
@@ -432,12 +326,8 @@
         private System.Windows.Forms.Panel attendancePanel;
         private System.Windows.Forms.ToolStrip attendanceStrips;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.Button printAttendance;
-        private System.Windows.Forms.Button deleteAttendance;
-        private System.Windows.Forms.Button recordAttendance;
-        private System.Windows.Forms.Button editAttendance;
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button mDashboardButton;
+        private System.Windows.Forms.Button attendanceButton;
     }
 }

@@ -56,27 +56,6 @@ namespace membership_system
 
         }
 
-        private void manageMember_Click(object sender, EventArgs e)
-        {
-            memberPanel.Visible = true;
-            meetingPanel.Visible = false;
-            attendancePanel.Visible = false;
-        }
-
-        private void manageMeeting_Click(object sender, EventArgs e)
-        {
-            memberPanel.Visible = false;
-            meetingPanel.Visible = true;
-            attendancePanel.Visible = false;
-        }
-
-        private void manageAttendance_Click(object sender, EventArgs e)
-        {
-            memberPanel.Visible = false;
-            meetingPanel.Visible = false;
-            attendancePanel.Visible = true;
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             clubFees cf = new clubFees(session);
@@ -93,30 +72,6 @@ namespace membership_system
         {
             PrintMeeting mr = new PrintMeeting(session);
             mr.ShowDialog();
-        }
-
-        private void recordAttendance_Click(object sender, EventArgs e)
-        {
-            RecordAttendance ra = new RecordAttendance();
-            ra.ShowDialog();
-        }
-
-        private void editAttendance_Click(object sender, EventArgs e)
-        {
-            EditAttendance ea = new EditAttendance();
-            ea.ShowDialog();
-        }
-
-        private void deleteAttendance_Click(object sender, EventArgs e)
-        {
-            DeleteAttendance da = new DeleteAttendance();
-            da.ShowDialog();
-        }
-
-        private void printAttendance_Click(object sender, EventArgs e)
-        {
-            PrintAttendance pa = new PrintAttendance();
-            pa.ShowDialog();
         }
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,6 +106,12 @@ namespace membership_system
         {
             MemberDashboard mb = new MemberDashboard(session);
             mb.ShowDialog();
+        }
+
+        private void attendanceButton_Click(object sender, EventArgs e)
+        {
+            AttendanceManagement am = new AttendanceManagement(session);
+            am.ShowDialog();
         }
     }
 }
