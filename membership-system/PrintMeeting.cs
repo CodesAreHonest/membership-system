@@ -41,8 +41,15 @@ namespace membership_system
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            loadDataIntoDetails();
-                        
+            if (!string.IsNullOrWhiteSpace(meetingNameComboBox.Text))
+            {
+                loadDataIntoDetails();
+                searchAttendanceOnDisplay();
+            }
+            else
+            {
+                MessageBox.Show("Please select meeting name to search.");
+            }                        
         }
 
         private void loadDataIntoDetails()
@@ -87,6 +94,38 @@ namespace membership_system
             }
         }
 
-        
+        private void searchAttendanceOnDisplay()
+        {
+            Club club = new Club();
+
+            query = "select distinct student_name, student_intakecode, student_email, student_handphone, student_gender from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id inner join meeting as m on c.club_id = m.club_id right join attendance as a on a.student_id = s.student_id where m.club_id = " +
+                club.getClubIDFromPresident(session) + "and m.meeting_name = '" + meetingNameComboBox.Text + "'";
+
+            displayAttendance(query);
+        }
+
+        private void displayAttendance(string query)
+        {
+            try
+            {
+                SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = query;
+
+                SqlDataAdapter storage = new SqlDataAdapter(command);//store the data get from database
+                DataTable datatable = new DataTable();//put data into this table
+                storage.Fill(datatable);
+                meetingGridView.DataSource = datatable;//datagridtable get data from the data table
+                connect.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+        }
+
+
     }
 }
