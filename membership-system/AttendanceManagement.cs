@@ -7,22 +7,94 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace membership_system
 {
     public partial class AttendanceManagement : Form
     {
-        private string session; 
+        private string session;
+        private string query; 
 
         public AttendanceManagement(string session)
         {
             this.session = session;
             InitializeComponent();
+            loadMeetingCombobox();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            displayAllField();
+        }
+
+        public void loadMeetingCombobox()
+        {
+            Club club = new Club();
+            SqlConn sqlConn = new SqlConn();
+            SqlDataAdapter sda = new SqlDataAdapter("select meeting_name from dbo.meeting where club_id = " + club.getClubIDFromPresident(session), sqlConn.sqlConnection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            meetingCombobox.Items.Clear();
+            foreach (DataRow item in dt.Rows)
+            {
+                meetingCombobox.Items.Add(item[0].ToString());
+            }
+        }
+
+        private void displayAllField()
+        {
+            Club club = new Club();
+            query = "select student_name, student_intakecode, student_handphone, student_gender from student s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id inner join meeting as m on c.club_id = m.club_id where m.club_id = " +
+                club.getClubIDFromPresident(session) + "and m.meeting_name = '" + meetingCombobox.Text + "'";
+            displayData(query);                  
+        }
+
+        // display data in datagridview base on query
+        private void displayData(string query)
+        {
+            
+
+
+            try
+            {
+                SqlConn connect = new SqlConn();
+                connect.open();
+                SqlCommand command = new SqlCommand();
+                command.Connection = connect.sqlConnection;
+                command.CommandText = query;
+
+                SqlDataAdapter storage = new SqlDataAdapter(command);//store the data get from database
+                DataTable datatable = new DataTable();//put data into this table
+                storage.Fill(datatable);
+                attendanceList.DataSource = datatable;//datagridtable get data from the data table
+                connect.close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+
+            if (attendanceList.Columns.Contains("CheckBox"))
+            {
+                attendanceList.Columns.Remove("CheckBox");
+            }
+
+            chk.HeaderText = "Attendance";
+            chk.Name = "CheckBox";
+            attendanceList.Columns.Add(chk);
+
+
+
+
 
         }
+
+
+
+
     }
 }
