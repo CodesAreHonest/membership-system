@@ -19,8 +19,16 @@ namespace membership_system
         public AttendanceManagement(string session)
         {
             this.session = session;
+            
             InitializeComponent();
             loadMeetingCombobox();
+            headerDisplay();
+        }
+
+        private void headerDisplay()
+        {
+            Club club = new Club();
+            welcomeMessage.Text = club.getClubNameDisplay(session) + "'s Attendance Dashboard";
         }
 
         public void loadMeetingCombobox()
