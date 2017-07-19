@@ -43,16 +43,16 @@
             this.fullnameLabel = new System.Windows.Forms.Label();
             this.viewPanel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.email = new System.Windows.Forms.Label();
+            this.gender = new System.Windows.Forms.Label();
+            this.pw = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
-            this.pw = new System.Windows.Forms.Label();
-            this.gender = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             this.editPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -227,6 +227,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account information";
             // 
+            // email
+            // 
+            this.email.AutoSize = true;
+            this.email.Location = new System.Drawing.Point(111, 233);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(13, 18);
+            this.email.TabIndex = 21;
+            this.email.Text = "-";
+            // 
+            // gender
+            // 
+            this.gender.AutoSize = true;
+            this.gender.Location = new System.Drawing.Point(113, 174);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(13, 18);
+            this.gender.TabIndex = 20;
+            this.gender.Text = "-";
+            // 
+            // pw
+            // 
+            this.pw.AutoSize = true;
+            this.pw.Location = new System.Drawing.Point(113, 114);
+            this.pw.Name = "pw";
+            this.pw.Size = new System.Drawing.Size(13, 18);
+            this.pw.TabIndex = 19;
+            this.pw.Text = "-";
+            // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.Location = new System.Drawing.Point(111, 50);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(13, 18);
+            this.name.TabIndex = 18;
+            this.name.Text = "-";
+            // 
             // editButton
             // 
             this.editButton.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -288,42 +324,6 @@
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Full name: ";
-            // 
-            // name
-            // 
-            this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(111, 50);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(13, 18);
-            this.name.TabIndex = 18;
-            this.name.Text = "-";
-            // 
-            // pw
-            // 
-            this.pw.AutoSize = true;
-            this.pw.Location = new System.Drawing.Point(113, 114);
-            this.pw.Name = "pw";
-            this.pw.Size = new System.Drawing.Size(13, 18);
-            this.pw.TabIndex = 19;
-            this.pw.Text = "-";
-            // 
-            // gender
-            // 
-            this.gender.AutoSize = true;
-            this.gender.Location = new System.Drawing.Point(113, 174);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(13, 18);
-            this.gender.TabIndex = 20;
-            this.gender.Text = "-";
-            // 
-            // email
-            // 
-            this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(111, 233);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(13, 18);
-            this.email.TabIndex = 21;
-            this.email.Text = "-";
             // 
             // UserEditAccount
             // 

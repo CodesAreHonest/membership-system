@@ -164,6 +164,7 @@
             this.studenthpTextbox.Name = "studenthpTextbox";
             this.studenthpTextbox.Size = new System.Drawing.Size(297, 27);
             this.studenthpTextbox.TabIndex = 17;
+            this.studenthpTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.studenthpTextbox_KeyPress);
             // 
             // addButton
             // 

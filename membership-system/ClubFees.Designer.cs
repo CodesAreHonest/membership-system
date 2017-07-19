@@ -209,6 +209,7 @@
             this.feesPaidTextbox.Name = "feesPaidTextbox";
             this.feesPaidTextbox.Size = new System.Drawing.Size(208, 27);
             this.feesPaidTextbox.TabIndex = 26;
+            this.feesPaidTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.feesPaidTextbox_KeyPress);
             // 
             // feesRequiredTextbox
             // 
