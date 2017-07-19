@@ -93,6 +93,7 @@ namespace membership_system
         {
             clearField();
             searchTextbox.Text = "";
+            displayAllField();
         }
 
         private void validateEmptyField()
