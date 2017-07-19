@@ -10,14 +10,16 @@ namespace membership_system
     class Meeting
     {
         private int meetingID;
+        private List<int> expiredMeetingID = new List<int>();
+
         private string name;
         private string location;
         private string description;
-
         private DateTime startDate;
         private DateTime endDate;
         private DateTime startTime;
         private DateTime endTime;
+
         private string session;
         private TimeSpan duration;
         private TimeSpan reportDuration;
@@ -139,6 +141,30 @@ namespace membership_system
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
+            command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '"
+                + getMeetingName()
+                + "' and club_id = " + club.getClubIDFromPresident(session);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                meetingID = Convert.ToInt32(reader["meeting_id"].ToString());
+            }
+
+            reader.Close();
+            connect.close();
+
+            return meetingID;
+        }
+
+        public int getSecureMeetingID()
+        {
+            Club club = new Club();
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
             command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" 
                 + getMeetingName() 
                 + "' and meeting_location = '" + getMeetingLocation() 
@@ -158,6 +184,29 @@ namespace membership_system
             connect.close();
 
             return meetingID;
+        }
+
+        public List<int> getExpiredMeetingID()
+        {
+            Club club = new Club();
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select distinct meeting_id from dbo.meeting where meeting_starttime < CURRENT_TIMESTAMP and club_id = " + 
+                club.getClubIDFromPresident(session);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                expiredMeetingID.Add(Convert.ToInt32(reader["meeting_id"].ToString()));
+            }
+
+            reader.Close();
+            connect.close();
+
+            return expiredMeetingID;
         }
      
 

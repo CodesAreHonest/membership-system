@@ -18,6 +18,8 @@ namespace membership_system
         private string session;
         private Boolean insertMeetingData;
         private int meetingID;
+        private List<int> expiredMeetingID = new List<int>();
+        private List<int> expiredAttendance = new List<int>();
 
         public MeetingDashboard(string session)
         {
@@ -34,8 +36,105 @@ namespace membership_system
 
         private void MeetingDashboard_Load(object sender, EventArgs e)
         {
+            Meeting m = new Meeting(session);
+            deleteExpiredAttendance();
+            deleteExpiredMeeting();
             displayAllField();
             disablePastDates();
+        }
+
+        private void deleteExpiredMeeting()
+        {
+            string queryMeeting = identifyExpiredMeetingIDQuery();
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = queryMeeting;
+
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
+        }
+
+        private string identifyExpiredMeetingIDQuery()
+        {
+            Club club = new Club();
+            Meeting m = new Meeting(session);
+            expiredMeetingID = m.getExpiredMeetingID();
+
+            if (expiredMeetingID.Count.Equals(0))
+            {
+                MessageBox.Show(expiredMeetingID.Count.ToString());
+                string query = "delete from meeting where meeting_id in (0)";
+                return query;
+            }
+            else
+            {
+                string queryMeeting = "delete from meeting where meeting_id in (";
+                for (int i = 0; i < expiredMeetingID.Count; i++)
+                {
+                    if (i.Equals(expiredMeetingID.Count - 1))
+                    {
+                        queryMeeting += expiredMeetingID[i];
+                    }
+                    else
+                    {
+                        queryMeeting += expiredMeetingID[i] + ",";
+                    }
+                }
+                queryMeeting += ") and club_id = " + club.getClubIDFromPresident(session);
+
+                return queryMeeting;
+            }
+        }
+
+        private string identifyExpiredAttendanceQuery()
+        {
+            President p = new President();
+            Meeting m = new Meeting(session);
+            expiredMeetingID = m.getExpiredMeetingID();
+
+            if(expiredMeetingID.Count.Equals(0))
+            {
+                MessageBox.Show(expiredMeetingID.Count.ToString());
+                string query = "delete from attendance where meeting_id in (0)";
+                return query;
+            }
+            else
+            {
+                string queryAttendance = "delete from attendance where meeting_id in (";
+
+                for (int i = 0; i < expiredMeetingID.Count; i++)
+                {
+                    if (i.Equals(expiredMeetingID.Count - 1))
+                    {
+                        queryAttendance += expiredMeetingID[i];
+                    }
+                    else
+                    {
+                        queryAttendance += expiredMeetingID[i] + ",";
+                    }
+                }
+                queryAttendance += ") and president_id = " + p.getPresidentID(session);
+
+                return queryAttendance;
+            }
+            
+        }
+
+        private void deleteExpiredAttendance()
+        {
+            string queryMeeting = identifyExpiredAttendanceQuery();
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = queryMeeting;
+
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            connect.close();
         }
 
         private void displayAllField()
@@ -250,7 +349,7 @@ namespace membership_system
             m.setLocation(locationTextbox.Text);
             m.setStartTime(datePicker.Value, startTimePicker.Value);
             m.setEndTime(datePicker.Value, endTimePicker.Value);
-            meetingID = m.getMeetingID();
+            meetingID = m.getSecureMeetingID();
 
         }
 
