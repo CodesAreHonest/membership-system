@@ -18,7 +18,6 @@ namespace membership_system
     {
         private string session;
         private string query;
-        Bitmap bmp;
 
         public PrintMeeting(string session)
         {

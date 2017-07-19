@@ -72,9 +72,9 @@ namespace membership_system
         private void memberGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             studNameLabel.Text = memberGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            feesRequiredTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            feesRequiresLabel.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             feesPaidTextbox.Text = "0.00";
-            feesLeftTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            feesLeftLabel.Text = memberGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             Boolean paidStatus = Convert.ToBoolean(memberGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
 
@@ -92,7 +92,7 @@ namespace membership_system
 
         private void validateEmptyField()
         {
-            if(string.IsNullOrEmpty(studNameLabel.Text) || string.IsNullOrWhiteSpace(feesLeftTextbox.Text) || string.IsNullOrWhiteSpace(feesRequiredTextbox.Text) || string.IsNullOrWhiteSpace(feesPaidTextbox.Text))
+            if(string.IsNullOrEmpty(studNameLabel.Text) || string.IsNullOrWhiteSpace(feesLeftLabel.Text) || string.IsNullOrWhiteSpace(feesRequiresLabel.Text) || string.IsNullOrWhiteSpace(feesPaidTextbox.Text))
             {
                 insertStudentData = false;
             }
@@ -105,9 +105,9 @@ namespace membership_system
         private void clearField()
         {
             studNameLabel.Text = "";
-            feesRequiredTextbox.Text = "";
+            feesRequiresLabel.Text = "-";
             feesPaidTextbox.Text = "";
-            feesLeftTextbox.Text = "";
+            feesLeftLabel.Text = "-";
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -163,7 +163,7 @@ namespace membership_system
 
         private void calculateFees()
         {
-            decimal requiredFees = Convert.ToDecimal(feesRequiredTextbox.Text);
+            decimal requiredFees = Convert.ToDecimal(feesRequiresLabel.Text);
             decimal paidFees = Convert.ToDecimal(feesPaidTextbox.Text);
 
             Fee fees = new Fee();
@@ -173,7 +173,7 @@ namespace membership_system
             leftFees = fees.calculateRemainingFees();
             fees.setFeesLeft(leftFees);
 
-            feesLeftTextbox.Text = leftFees.ToString();
+            feesLeftLabel.Text = leftFees.ToString();
         }
 
         private void feesPaidTextbox_KeyPress(object sender, KeyPressEventArgs e)
