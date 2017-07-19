@@ -149,6 +149,8 @@ namespace membership_system
             Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text, studentGenderCombobox.Text, intakeCodeTextbox.Text);
             studentID = member.getMemberID();
 
+            addButton.Visible = false;
+
         }
 
         // display data in datagridview base on query
@@ -186,6 +188,7 @@ namespace membership_system
         // clear search result and display all data 
         private void clearSearchButton_Click(object sender, EventArgs e)
         {
+            addButton.Visible = true;
             searchTextbox.Text = "";
             clearField();
             displayAllField();

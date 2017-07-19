@@ -65,7 +65,6 @@ namespace membership_system
 
             if (expiredMeetingID.Count.Equals(0))
             {
-                MessageBox.Show(expiredMeetingID.Count.ToString());
                 string query = "delete from meeting where meeting_id in (0)";
                 return query;
             }
@@ -97,7 +96,6 @@ namespace membership_system
 
             if(expiredMeetingID.Count.Equals(0))
             {
-                MessageBox.Show(expiredMeetingID.Count.ToString());
                 string query = "delete from attendance where meeting_id in (0)";
                 return query;
             }
@@ -190,6 +188,7 @@ namespace membership_system
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            addButton.Visible = true;
             clearField();
             searchTextbox.Text = "";
             displayAllField();
@@ -350,6 +349,8 @@ namespace membership_system
             m.setStartTime(datePicker.Value, startTimePicker.Value);
             m.setEndTime(datePicker.Value, endTimePicker.Value);
             meetingID = m.getSecureMeetingID();
+
+            addButton.Visible = false;
 
         }
 
