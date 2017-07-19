@@ -287,5 +287,15 @@ namespace membership_system
             reader.Close();
             connect.close();
         }
+
+        private void studenthpTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
