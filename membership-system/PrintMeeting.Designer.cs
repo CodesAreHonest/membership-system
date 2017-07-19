@@ -109,9 +109,9 @@
             // 
             this.printButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.printButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printButton.Location = new System.Drawing.Point(476, 757);
+            this.printButton.Location = new System.Drawing.Point(476, 776);
             this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(310, 58);
+            this.printButton.Size = new System.Drawing.Size(310, 39);
             this.printButton.TabIndex = 16;
             this.printButton.Text = "Print";
             this.printButton.UseVisualStyleBackColor = false;
@@ -120,61 +120,61 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 120);
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 19);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 25;
             this.label3.Text = "Meeting Description: ";
             // 
             // durationLabel
             // 
             this.durationLabel.AutoSize = true;
-            this.durationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.durationLabel.Location = new System.Drawing.Point(774, 120);
+            this.durationLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.durationLabel.Location = new System.Drawing.Point(775, 107);
             this.durationLabel.Name = "durationLabel";
-            this.durationLabel.Size = new System.Drawing.Size(255, 19);
+            this.durationLabel.Size = new System.Drawing.Size(225, 18);
             this.durationLabel.TabIndex = 22;
             this.durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(664, 120);
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(665, 107);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 18;
             this.label5.Text = "Duration: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(653, 51);
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(654, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Start Time: ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(658, 85);
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(659, 72);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 19);
+            this.label7.Size = new System.Drawing.Size(78, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "End Time: ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(56, 85);
+            this.label8.Location = new System.Drawing.Point(56, 71);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 19);
+            this.label8.Size = new System.Drawing.Size(125, 17);
             this.label8.TabIndex = 5;
             this.label8.Text = "Meeting Location: ";
             // 
@@ -194,9 +194,9 @@
             this.detailsBox.Controls.Add(this.label8);
             this.detailsBox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailsBox.ForeColor = System.Drawing.Color.Black;
-            this.detailsBox.Location = new System.Drawing.Point(22, 31);
+            this.detailsBox.Location = new System.Drawing.Point(24, 12);
             this.detailsBox.Name = "detailsBox";
-            this.detailsBox.Size = new System.Drawing.Size(1162, 169);
+            this.detailsBox.Size = new System.Drawing.Size(1162, 199);
             this.detailsBox.TabIndex = 30;
             this.detailsBox.TabStop = false;
             this.detailsBox.Text = "Meeting Details ";
@@ -204,61 +204,61 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(228, 51);
+            this.nameLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(228, 37);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(51, 19);
+            this.nameLabel.Size = new System.Drawing.Size(46, 18);
             this.nameLabel.TabIndex = 37;
             this.nameLabel.Text = "name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(76, 51);
+            this.label2.Location = new System.Drawing.Point(76, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 19);
+            this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 36;
             this.label2.Text = "Meeting Name: ";
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(226, 120);
+            this.descriptionLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(228, 107);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(97, 19);
+            this.descriptionLabel.Size = new System.Drawing.Size(88, 18);
             this.descriptionLabel.TabIndex = 35;
             this.descriptionLabel.Text = "description";
             // 
             // endTimeLabel
             // 
             this.endTimeLabel.AutoSize = true;
-            this.endTimeLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endTimeLabel.Location = new System.Drawing.Point(777, 85);
+            this.endTimeLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endTimeLabel.Location = new System.Drawing.Point(778, 72);
             this.endTimeLabel.Name = "endTimeLabel";
-            this.endTimeLabel.Size = new System.Drawing.Size(76, 19);
+            this.endTimeLabel.Size = new System.Drawing.Size(69, 18);
             this.endTimeLabel.TabIndex = 34;
             this.endTimeLabel.Text = "end time";
             // 
             // startTimeLabel
             // 
             this.startTimeLabel.AutoSize = true;
-            this.startTimeLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startTimeLabel.Location = new System.Drawing.Point(777, 51);
+            this.startTimeLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startTimeLabel.Location = new System.Drawing.Point(778, 38);
             this.startTimeLabel.Name = "startTimeLabel";
-            this.startTimeLabel.Size = new System.Drawing.Size(84, 19);
+            this.startTimeLabel.Size = new System.Drawing.Size(74, 18);
             this.startTimeLabel.TabIndex = 33;
             this.startTimeLabel.Text = "start time";
             // 
             // locationLabel
             // 
             this.locationLabel.AutoSize = true;
-            this.locationLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locationLabel.Location = new System.Drawing.Point(229, 85);
+            this.locationLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLabel.Location = new System.Drawing.Point(229, 71);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(71, 19);
+            this.locationLabel.Size = new System.Drawing.Size(64, 18);
             this.locationLabel.TabIndex = 31;
             this.locationLabel.Text = "location";
             // 
@@ -282,12 +282,12 @@
             this.meetingGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.meetingGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.meetingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.meetingGridView.Location = new System.Drawing.Point(135, 218);
+            this.meetingGridView.Location = new System.Drawing.Point(149, 217);
             this.meetingGridView.Name = "meetingGridView";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.meetingGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.meetingGridView.RowTemplate.Height = 24;
-            this.meetingGridView.Size = new System.Drawing.Size(875, 365);
+            this.meetingGridView.Size = new System.Drawing.Size(875, 437);
             this.meetingGridView.TabIndex = 11;
             // 
             // printDocument1
@@ -309,9 +309,9 @@
             // 
             this.panel1.Controls.Add(this.detailsBox);
             this.panel1.Controls.Add(this.meetingGridView);
-            this.panel1.Location = new System.Drawing.Point(55, 138);
+            this.panel1.Location = new System.Drawing.Point(57, 113);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1207, 613);
+            this.panel1.Size = new System.Drawing.Size(1207, 657);
             this.panel1.TabIndex = 31;
             // 
             // PrintMeeting

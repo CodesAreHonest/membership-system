@@ -26,6 +26,7 @@ namespace membership_system
             InitializeComponent();
             this.session = session;
             headerDisplay();
+            descriptionTextbox.MaxLength = 100;
         }
 
         private void headerDisplay()

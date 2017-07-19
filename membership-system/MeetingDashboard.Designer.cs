@@ -57,6 +57,7 @@
             this.messageText = new System.Windows.Forms.Label();
             this.statusText = new System.Windows.Forms.Label();
             this.meetingGridView = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -252,6 +253,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.startTimePicker);
             this.groupBox2.Controls.Add(this.endTimePicker);
@@ -397,6 +399,16 @@
             this.meetingGridView.TabIndex = 10;
             this.meetingGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.meetingGridView_RowHeaderMouseClick);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(59, 431);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 19);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "(Max 100 words)";
+            // 
             // MeetingDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -459,5 +471,6 @@
         private System.Windows.Forms.DateTimePicker startTimePicker;
         private System.Windows.Forms.DateTimePicker endTimePicker;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
     }
 }

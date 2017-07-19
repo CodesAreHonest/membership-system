@@ -20,6 +20,7 @@ namespace membership_system
             InitializeComponent();
             this.session = session;
             this.clubname = clubname;
+            societyDescriptionTextbox.MaxLength = 255;
             showView();
         }
 
@@ -78,6 +79,12 @@ namespace membership_system
             loadClubData();
         }
 
+        private void beautifyDescription()
+        {
+            societyDescription.MaximumSize = new Size(360, 0);
+            societyDescription.AutoSize = true;
+        }
+
         private void loadClubData()
         {
             President p = new President();
@@ -100,6 +107,7 @@ namespace membership_system
                     // show value for edit
                     societyName.Text = club.getClubName();
                     societyFees.Text = club.getClubFees();
+                    beautifyDescription();
                     societyDescription.Text = club.getClubDescription();
 
                     // automate value on textfield

@@ -24,6 +24,12 @@ namespace membership_system
             InitializeComponent();
             this.session = session;
             loadClubCombobox();
+            beautifyDescription();
+        }
+
+        private void beautifyDescription()
+        {
+            descriptionLabel.MaximumSize = new Size(250, 0);
         }
 
         public void loadClubCombobox()
@@ -132,12 +138,6 @@ namespace membership_system
 
         private void printButton_Click(object sender, EventArgs e)
         {
-            /*Graphics g = this.CreateGraphics();
-            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-            Graphics mg = Graphics.FromImage(bmp);
-            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-            printPreviewDialog1.ShowDialog();*/
-
 
             printPreviewDialog1.ShowDialog();
             PrintDocument doc = new PrintDocument();
