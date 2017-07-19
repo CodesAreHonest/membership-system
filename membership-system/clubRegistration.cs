@@ -11,6 +11,7 @@ namespace membership_system
         public ClubRegistration()
         {
             InitializeComponent();
+            societyDescriptionTextbox.MaxLength = 255;
         }
 
         private void validateEmptyField()

@@ -15,6 +15,7 @@ namespace membership_system
     {
         private string session;
         private string clubname;
+        private Boolean insertData;
         public UserEditSociety(string session, string clubname)
         {
             InitializeComponent();
@@ -45,33 +46,54 @@ namespace membership_system
             this.Hide();
         }
 
+        private void validateEmptyField()
+        {
+            if(string.IsNullOrWhiteSpace(societyNameTextbox.Text) || string.IsNullOrWhiteSpace(societyDescriptionTextbox.Text))
+            {
+                insertData = false;
+            }
+            else
+            {
+                insertData = true;
+            }
+        }
+
         private void updateSocietyButton_Click(object sender, EventArgs e)
         {
-            President p = new President();
-            decimal societyFees = Convert.ToDecimal(societyFeesTextbox.Text);
-            try
+            validateEmptyField();
+            if (insertData)
             {
-                SqlConn connect = new SqlConn();
-                connect.open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = connect.sqlConnection;
-                command.CommandText = "update dbo.Club set club_name = '" + societyNameTextbox.Text + "', club_fees = " + societyFees +
-                    ", club_description = '" + societyDescriptionTextbox.Text + "' where president_id = " + p.getPresidentID(session);
+                President p = new President();
+                decimal societyFees = Convert.ToDecimal(feesLabel.Text);
+                try
+                {
+                    SqlConn connect = new SqlConn();
+                    connect.open();
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = connect.sqlConnection;
+                    command.CommandText = "update dbo.Club set club_name = '" + societyNameTextbox.Text + "', club_fees = " + societyFees +
+                        ", club_description = '" + societyDescriptionTextbox.Text + "' where president_id = " + p.getPresidentID(session);
 
-                SqlDataReader reader = command.ExecuteReader();
-                reader.Close();
-                connect.close();
+                    SqlDataReader reader = command.ExecuteReader();
+                    reader.Close();
+                    connect.close();
 
-                MessageBox.Show("Your society had update successfully! ");
+                    MessageBox.Show("Your society had update successfully! ");
+                    showView();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("error" + ex);
+                }
+                loadClubData();
                 showView();
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("error" + ex);
+                MessageBox.Show("Update action is INVALID \n because some field is empty or wrong");
             }
-            loadClubData();
-            showView();
+            
         }
 
         private void UserEditSociety_Load(object sender, EventArgs e)
@@ -112,7 +134,7 @@ namespace membership_system
 
                     // automate value on textfield
                     societyNameTextbox.Text = club.getClubName();
-                    societyFeesTextbox.Text = club.getClubFees();
+                    feesLabel.Text = club.getClubFees();
                     societyDescriptionTextbox.Text = club.getClubDescription();
 
                     // close connection

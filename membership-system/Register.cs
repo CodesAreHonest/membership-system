@@ -29,7 +29,7 @@ namespace membership_system
         public void loadClubCombobox()
         {
             SqlConn conn = new SqlConn();
-            SqlDataAdapter sda = new SqlDataAdapter("select club_name from dbo.Club where president_id is null", conn.sqlConnection);
+            SqlDataAdapter sda = new SqlDataAdapter("select club_name from dbo.Club", conn.sqlConnection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 

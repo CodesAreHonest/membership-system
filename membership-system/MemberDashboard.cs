@@ -105,11 +105,11 @@ namespace membership_system
             }
             else
             {
-                MessageBox.Show("Your action is INVALID because some field is empty or wrong and duplicate name");
+                MessageBox.Show("Your action is INVALID because some field is empty or wrong");
 
                 // warning message
                 messageText.ForeColor = System.Drawing.Color.Red;
-                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong and duplicate name ! ";
+                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong";
             }          
         }
 
@@ -147,12 +147,15 @@ namespace membership_system
 
             // register primary key once the row is clicked.
             Member member = new Member(); 
-            studentID = member.getMemberID();
             member.setName(studentNameTextbox.Text);
             member.setHP(Convert.ToInt64(studenthpTextbox.Text));
             member.setEmail(studentEmailTextbox.Text);
             member.setGender(studentGenderCombobox.Text);
             member.setIntakeCode(intakeCodeTextbox.Text);
+
+            studentID = member.getMemberID();
+
+
 
             addButton.Visible = false;
 

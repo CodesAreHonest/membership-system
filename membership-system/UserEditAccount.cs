@@ -14,6 +14,8 @@ namespace membership_system
     public partial class UserEditAccount : Form
     {
         private string session;
+        private Boolean insertData; 
+
         public UserEditAccount(string session)
         {
             InitializeComponent();
@@ -35,37 +37,58 @@ namespace membership_system
             viewPanel.Visible = true;
         }
 
+        private void validateEmptyField()
+        {
+            if(string.IsNullOrWhiteSpace(updateNameTextbox.Text) || string.IsNullOrWhiteSpace(pwTextbox.Text) || string.IsNullOrWhiteSpace(updateEmailTextbox.Text) || string.IsNullOrWhiteSpace(genderCombobox.Text))
+            {
+                insertData = false;
+            }
+            else
+            {
+                insertData = true;
+            }
+        }
+
         private void updateButton_Click(object sender, EventArgs e)
         {
-            President p = new President();        
-            try
+            validateEmptyField();
+            if (insertData)
             {
-                SqlConn connect = new SqlConn();
-                connect.open();
-                SqlCommand command = new SqlCommand();
-                command.Connection = connect.sqlConnection;
-                command.CommandText = "update dbo.President set president_name = '" + updateNameTextbox.Text + "', president_email = '" + updateEmailTextbox.Text +
-                    "', president_gender = '" + genderCombobox.Text + "',  president_password = '" + pwTextbox.Text + "' where president_id = " + p.getPresidentID(session);
+                President p = new President();
+                try
+                {
+                    SqlConn connect = new SqlConn();
+                    connect.open();
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = connect.sqlConnection;
+                    command.CommandText = "update dbo.President set president_name = '" + updateNameTextbox.Text + "', president_email = '" + updateEmailTextbox.Text +
+                        "', president_gender = '" + genderCombobox.Text + "',  president_password = '" + pwTextbox.Text + "' where president_id = " + p.getPresidentID(session);
 
-                SqlDataReader reader = command.ExecuteReader();
-                reader.Close();
-                connect.close();
+                    SqlDataReader reader = command.ExecuteReader();
+                    reader.Close();
+                    connect.close();
 
-                // register updated name for session on data retrieval 
-                p.setPresidentName(updateNameTextbox.Text);
-                this.session = p.getPresidentName();
+                    // register updated name for session on data retrieval 
+                    p.setPresidentName(updateNameTextbox.Text);
+                    this.session = p.getPresidentName();
 
-                MessageBox.Show("Your account details had update successfully! ");
+                    MessageBox.Show("Your account details had update successfully! ");
+                    openView();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("error" + ex);
+                }
+
                 openView();
-
+                loadPresidentData();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("error" + ex);
+                MessageBox.Show("Update action is INVALID \n because some field is empty or wrong. ");
             }
-            
-            openView();
-            loadPresidentData();
+           
         }
 
         private void editButton_Click(object sender, EventArgs e)

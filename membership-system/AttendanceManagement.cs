@@ -50,6 +50,7 @@ namespace membership_system
 
         private void displayAllField()
         {
+            Meeting m = new Meeting(session);
             Club club = new Club();
             query = "select student_name, student_intakecode, student_handphone, student_gender from student s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id inner join meeting as m on c.club_id = m.club_id where m.club_id = " +
                 club.getClubIDFromPresident(session) + "and m.meeting_name = '" + meetingCombobox.Text + "'";

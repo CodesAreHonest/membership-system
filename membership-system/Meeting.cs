@@ -193,7 +193,7 @@ namespace membership_system
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            command.CommandText = "select distinct meeting_id from dbo.meeting where meeting_starttime < CURRENT_TIMESTAMP and club_id = " + 
+            command.CommandText = "select distinct meeting_id from dbo.meeting where meeting_endtime < CURRENT_TIMESTAMP and club_id = " + 
                 club.getClubIDFromPresident(session);
 
             SqlDataReader reader = command.ExecuteReader();

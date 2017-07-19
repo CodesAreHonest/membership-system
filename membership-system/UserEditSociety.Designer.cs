@@ -31,7 +31,6 @@
             this.editPanel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.societyDescriptionTextbox = new System.Windows.Forms.TextBox();
-            this.societyFeesTextbox = new System.Windows.Forms.TextBox();
             this.societyNameTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.registerStrip = new System.Windows.Forms.ToolStrip();
             this.welcomeMessage = new System.Windows.Forms.ToolStripLabel();
+            this.feesLabel = new System.Windows.Forms.Label();
             this.editPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.viewPanel.SuspendLayout();
@@ -66,8 +66,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.feesLabel);
             this.groupBox2.Controls.Add(this.societyDescriptionTextbox);
-            this.groupBox2.Controls.Add(this.societyFeesTextbox);
             this.groupBox2.Controls.Add(this.societyNameTextbox);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -90,13 +90,6 @@
             this.societyDescriptionTextbox.Size = new System.Drawing.Size(472, 176);
             this.societyDescriptionTextbox.TabIndex = 21;
             // 
-            // societyFeesTextbox
-            // 
-            this.societyFeesTextbox.Location = new System.Drawing.Point(133, 90);
-            this.societyFeesTextbox.Name = "societyFeesTextbox";
-            this.societyFeesTextbox.Size = new System.Drawing.Size(348, 24);
-            this.societyFeesTextbox.TabIndex = 20;
-            // 
             // societyNameTextbox
             // 
             this.societyNameTextbox.Location = new System.Drawing.Point(133, 47);
@@ -108,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 52);
+            this.label2.Location = new System.Drawing.Point(22, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 18;
@@ -140,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 94);
+            this.label4.Location = new System.Drawing.Point(28, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 1;
@@ -149,7 +142,7 @@
             // viewPanel
             // 
             this.viewPanel.Controls.Add(this.groupBox1);
-            this.viewPanel.Location = new System.Drawing.Point(45, 40);
+            this.viewPanel.Location = new System.Drawing.Point(42, 43);
             this.viewPanel.Name = "viewPanel";
             this.viewPanel.Size = new System.Drawing.Size(576, 455);
             this.viewPanel.TabIndex = 8;
@@ -280,6 +273,16 @@
             this.welcomeMessage.Size = new System.Drawing.Size(250, 40);
             this.welcomeMessage.Text = "Membership System";
             // 
+            // feesLabel
+            // 
+            this.feesLabel.AutoSize = true;
+            this.feesLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesLabel.Location = new System.Drawing.Point(130, 91);
+            this.feesLabel.Name = "feesLabel";
+            this.feesLabel.Size = new System.Drawing.Size(13, 18);
+            this.feesLabel.TabIndex = 22;
+            this.feesLabel.Text = "-";
+            // 
             // UserEditSociety
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,11 +325,11 @@
         private System.Windows.Forms.Button editSocietyButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox societyDescriptionTextbox;
-        private System.Windows.Forms.TextBox societyFeesTextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label societyFees;
         private System.Windows.Forms.Label societyName;
         private System.Windows.Forms.Label societyDescription;
         private System.Windows.Forms.TextBox societyNameTextbox;
+        private System.Windows.Forms.Label feesLabel;
     }
 }

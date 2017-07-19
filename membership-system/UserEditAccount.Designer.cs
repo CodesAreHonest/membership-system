@@ -72,7 +72,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(596, 40);
+            this.registerStrip.Size = new System.Drawing.Size(614, 40);
             this.registerStrip.TabIndex = 3;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -201,7 +201,7 @@
             // viewPanel
             // 
             this.viewPanel.Controls.Add(this.groupBox2);
-            this.viewPanel.Location = new System.Drawing.Point(3, 46);
+            this.viewPanel.Location = new System.Drawing.Point(12, 43);
             this.viewPanel.Name = "viewPanel";
             this.viewPanel.Size = new System.Drawing.Size(576, 420);
             this.viewPanel.TabIndex = 6;
@@ -329,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 466);
+            this.ClientSize = new System.Drawing.Size(614, 466);
             this.Controls.Add(this.viewPanel);
             this.Controls.Add(this.editPanel);
             this.Controls.Add(this.registerStrip);

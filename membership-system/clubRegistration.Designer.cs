@@ -126,9 +126,9 @@
             this.retypePwLabel.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retypePwLabel.Location = new System.Drawing.Point(24, 141);
             this.retypePwLabel.Name = "retypePwLabel";
-            this.retypePwLabel.Size = new System.Drawing.Size(258, 17);
+            this.retypePwLabel.Size = new System.Drawing.Size(250, 17);
             this.retypePwLabel.TabIndex = 2;
-            this.retypePwLabel.Text = "Society Description: (Max 8000 words)";
+            this.retypePwLabel.Text = "Society Description: (Max 255 words)";
             // 
             // pwLabel
             // 
