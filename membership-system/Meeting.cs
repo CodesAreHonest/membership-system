@@ -139,8 +139,13 @@ namespace membership_system
             connect.open();
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
-            command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" + 
-                getMeetingName() + "' and club_id = " + club.getClubIDFromPresident(session);
+            command.CommandText = "select meeting_id from dbo.Meeting where meeting_name = '" 
+                + getMeetingName() 
+                + "' and meeting_location = '" + getMeetingLocation() 
+                + "' and meeting_description = '" + getMeetingDescription() 
+                + "' and meeting_starttime = '" + getStartTime() 
+                + "' and meeting_endtime = '" + getEndTime()
+                + "' and club_id = " + club.getClubIDFromPresident(session);
 
             SqlDataReader reader = command.ExecuteReader();
 
