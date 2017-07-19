@@ -220,6 +220,7 @@
             // 
             // meetingCombobox1
             // 
+            this.meetingCombobox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.meetingCombobox1.FormattingEnabled = true;
             this.meetingCombobox1.Location = new System.Drawing.Point(175, 50);
             this.meetingCombobox1.Name = "meetingCombobox1";

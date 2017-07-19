@@ -151,10 +151,10 @@ namespace membership_system
 
         private void searchAttendanceOnDisplay()
         {
-            Club club = new Club();
-
-            query = "select distinct student_name, student_intakecode, student_handphone, student_gender from student as s inner join register as r on s.student_id = r.student_id inner join club as c on r.club_id = c.club_id inner join meeting as m on c.club_id = m.club_id right join attendance as a on a.student_id = s.student_id where m.club_id = " +
-                club.getClubIDFromPresident(session) + "and m.meeting_name = '" + meetingCombobox1.Text + "'";
+            Meeting m = new Meeting(session);
+            m.setName(meetingCombobox1.Text);
+            query = "select distinct student_name, student_intakecode, student_handphone, student_gender from student as s inner join attendance as a on s.student_id = a.student_id inner join meeting as m on a.meeting_id = m.meeting_id where a.meeting_id = " + 
+                m.getMeetingID();
 
             displayAttendance(query);
         }
