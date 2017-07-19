@@ -194,7 +194,7 @@
             this.detailsBox.Controls.Add(this.label8);
             this.detailsBox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailsBox.ForeColor = System.Drawing.Color.Black;
-            this.detailsBox.Location = new System.Drawing.Point(22, 31);
+            this.detailsBox.Location = new System.Drawing.Point(22, 18);
             this.detailsBox.Name = "detailsBox";
             this.detailsBox.Size = new System.Drawing.Size(1162, 169);
             this.detailsBox.TabIndex = 30;
@@ -282,12 +282,12 @@
             this.meetingGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.meetingGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.meetingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.meetingGridView.Location = new System.Drawing.Point(135, 218);
+            this.meetingGridView.Location = new System.Drawing.Point(143, 203);
             this.meetingGridView.Name = "meetingGridView";
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.meetingGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.meetingGridView.RowTemplate.Height = 24;
-            this.meetingGridView.Size = new System.Drawing.Size(875, 365);
+            this.meetingGridView.Size = new System.Drawing.Size(875, 407);
             this.meetingGridView.TabIndex = 11;
             // 
             // printDocument1
@@ -309,9 +309,9 @@
             // 
             this.panel1.Controls.Add(this.detailsBox);
             this.panel1.Controls.Add(this.meetingGridView);
-            this.panel1.Location = new System.Drawing.Point(55, 138);
+            this.panel1.Location = new System.Drawing.Point(57, 113);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1207, 613);
+            this.panel1.Size = new System.Drawing.Size(1207, 628);
             this.panel1.TabIndex = 31;
             // 
             // PrintMeeting

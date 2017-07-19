@@ -120,9 +120,9 @@
             this.label1.Font = new System.Drawing.Font("Arial", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.Size = new System.Drawing.Size(202, 17);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Description: ";
+            this.label1.Text = "Description: (Max 255 Words)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // updateSocietyButton
@@ -149,7 +149,7 @@
             // viewPanel
             // 
             this.viewPanel.Controls.Add(this.groupBox1);
-            this.viewPanel.Location = new System.Drawing.Point(39, 43);
+            this.viewPanel.Location = new System.Drawing.Point(45, 40);
             this.viewPanel.Name = "viewPanel";
             this.viewPanel.Size = new System.Drawing.Size(576, 455);
             this.viewPanel.TabIndex = 8;
@@ -265,7 +265,7 @@
             this.registerStrip.Name = "registerStrip";
             this.registerStrip.Padding = new System.Windows.Forms.Padding(20, 0, 1, 0);
             this.registerStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.registerStrip.Size = new System.Drawing.Size(634, 40);
+            this.registerStrip.Size = new System.Drawing.Size(644, 40);
             this.registerStrip.TabIndex = 9;
             this.registerStrip.Text = "toolStrip1";
             // 
@@ -284,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 514);
+            this.ClientSize = new System.Drawing.Size(644, 514);
             this.Controls.Add(this.registerStrip);
             this.Controls.Add(this.viewPanel);
             this.Controls.Add(this.editPanel);
