@@ -40,9 +40,7 @@
             this.calculateButton = new System.Windows.Forms.Button();
             this.feesStatusLabel = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
-            this.feesLeftTextbox = new System.Windows.Forms.TextBox();
             this.feesPaidTextbox = new System.Windows.Forms.TextBox();
-            this.feesRequiredTextbox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +48,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.feesRequiresLabel = new System.Windows.Forms.Label();
+            this.feesLeftLabel = new System.Windows.Forms.Label();
             this.registerStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memberGridView)).BeginInit();
             this.feesGroupbox.SuspendLayout();
@@ -126,13 +126,13 @@
             // 
             // feesGroupbox
             // 
+            this.feesGroupbox.Controls.Add(this.feesLeftLabel);
+            this.feesGroupbox.Controls.Add(this.feesRequiresLabel);
             this.feesGroupbox.Controls.Add(this.studNameLabel);
             this.feesGroupbox.Controls.Add(this.calculateButton);
             this.feesGroupbox.Controls.Add(this.feesStatusLabel);
             this.feesGroupbox.Controls.Add(this.updateButton);
-            this.feesGroupbox.Controls.Add(this.feesLeftTextbox);
             this.feesGroupbox.Controls.Add(this.feesPaidTextbox);
-            this.feesGroupbox.Controls.Add(this.feesRequiredTextbox);
             this.feesGroupbox.Controls.Add(this.label8);
             this.feesGroupbox.Controls.Add(this.label7);
             this.feesGroupbox.Controls.Add(this.label6);
@@ -194,14 +194,6 @@
             this.updateButton.UseVisualStyleBackColor = false;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
-            // feesLeftTextbox
-            // 
-            this.feesLeftTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesLeftTextbox.Location = new System.Drawing.Point(208, 207);
-            this.feesLeftTextbox.Name = "feesLeftTextbox";
-            this.feesLeftTextbox.Size = new System.Drawing.Size(208, 27);
-            this.feesLeftTextbox.TabIndex = 27;
-            // 
             // feesPaidTextbox
             // 
             this.feesPaidTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,14 +202,6 @@
             this.feesPaidTextbox.Size = new System.Drawing.Size(208, 27);
             this.feesPaidTextbox.TabIndex = 26;
             this.feesPaidTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.feesPaidTextbox_KeyPress);
-            // 
-            // feesRequiredTextbox
-            // 
-            this.feesRequiredTextbox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesRequiredTextbox.Location = new System.Drawing.Point(208, 112);
-            this.feesRequiredTextbox.Name = "feesRequiredTextbox";
-            this.feesRequiredTextbox.Size = new System.Drawing.Size(208, 27);
-            this.feesRequiredTextbox.TabIndex = 25;
             // 
             // label8
             // 
@@ -289,6 +273,26 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Student name: ";
             // 
+            // feesRequiresLabel
+            // 
+            this.feesRequiresLabel.AutoSize = true;
+            this.feesRequiresLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesRequiresLabel.Location = new System.Drawing.Point(204, 116);
+            this.feesRequiresLabel.Name = "feesRequiresLabel";
+            this.feesRequiresLabel.Size = new System.Drawing.Size(15, 19);
+            this.feesRequiresLabel.TabIndex = 31;
+            this.feesRequiresLabel.Text = "-";
+            // 
+            // feesLeftLabel
+            // 
+            this.feesLeftLabel.AutoSize = true;
+            this.feesLeftLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesLeftLabel.Location = new System.Drawing.Point(204, 215);
+            this.feesLeftLabel.Name = "feesLeftLabel";
+            this.feesLeftLabel.Size = new System.Drawing.Size(15, 19);
+            this.feesLeftLabel.TabIndex = 32;
+            this.feesLeftLabel.Text = "-";
+            // 
             // clubFees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,12 +336,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button updateButton;
-        private System.Windows.Forms.TextBox feesLeftTextbox;
         private System.Windows.Forms.TextBox feesPaidTextbox;
-        private System.Windows.Forms.TextBox feesRequiredTextbox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label feesStatusLabel;
         private System.Windows.Forms.Button calculateButton;
         private System.Windows.Forms.Label studNameLabel;
+        private System.Windows.Forms.Label feesLeftLabel;
+        private System.Windows.Forms.Label feesRequiresLabel;
     }
 }
