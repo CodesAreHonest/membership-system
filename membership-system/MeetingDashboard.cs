@@ -38,8 +38,8 @@ namespace membership_system
         private void MeetingDashboard_Load(object sender, EventArgs e)
         {
             Meeting m = new Meeting(session);
-            deleteExpiredAttendance();
-            deleteExpiredMeeting();
+            //deleteExpiredAttendance();
+            //deleteExpiredMeeting();
             displayAllField();
             disablePastDates();
         }
@@ -139,7 +139,8 @@ namespace membership_system
         private void displayAllField()
         {
             Club club = new Club();
-            query = "select meeting_name, meeting_location, meeting_description, meeting_starttime, meeting_endtime, meeting_duration from meeting where club_id = " + club.getClubIDFromPresident(session);
+            query = "select meeting_name, meeting_location, meeting_description, meeting_starttime, meeting_endtime, meeting_duration from meeting where club_id = " + club.getClubIDFromPresident(session) + 
+                " and meeting_starttime > CURRENT_TIMESTAMP";
             displayData(query);
         }
 
