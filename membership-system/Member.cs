@@ -7,12 +7,12 @@ namespace membership_system
     {
         private int memberID; 
         private string name;
-        private int handphone;
+        private long handphone;
         private string email;
         private string gender;
         private string intakecode;
 
-        public Member(string name, int handphone, string email, string gender, string intakecode)
+        public Member(string name, long handphone, string email, string gender, string intakecode)
         {
             this.name = name;
             this.handphone = handphone;
@@ -36,7 +36,7 @@ namespace membership_system
             return name;
         }
 
-        public int getHP()
+        public long getHP()
         {
             return handphone;
         }
@@ -63,6 +63,31 @@ namespace membership_system
             SqlCommand command = new SqlCommand();
             command.Connection = connect.sqlConnection;
             command.CommandText = "select student_id from dbo.Student where student_name = '" + memberName + "'";
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                memberID = Convert.ToInt32(reader["student_id"].ToString());
+            }
+
+            reader.Close();
+            connect.close();
+
+            return memberID;
+        }
+
+        public int getMemberID()
+        {
+            SqlConn connect = new SqlConn();
+            connect.open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connect.sqlConnection;
+            command.CommandText = "select student_id from dbo.Student where student_name = '" + getName() 
+                + "' and student_handphone = " + getHP() 
+                + " and student_email = '" + getEmail() 
+                + "' and student_gender = '" + getGender() 
+                + "' and student_intakecode = '" + getIntakeCode() + "'";
 
             SqlDataReader reader = command.ExecuteReader();
 

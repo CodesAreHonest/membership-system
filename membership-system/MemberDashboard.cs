@@ -39,6 +39,7 @@ namespace membership_system
             {
                 insertStudentData = true;
             }
+           
         }
 
         private void headerDisplay()
@@ -75,7 +76,7 @@ namespace membership_system
             validateEmptyField();
             if (insertStudentData)
             {
-                Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
+                Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
 
 
@@ -103,11 +104,11 @@ namespace membership_system
             }
             else
             {
-                MessageBox.Show("Your action is INVALID because some field is empty or wrong");
+                MessageBox.Show("Your action is INVALID because some field is empty or wrong and duplicate name");
 
                 // warning message
                 messageText.ForeColor = System.Drawing.Color.Red;
-                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong ! ";
+                messageText.Text = "INSERT action is INVALID \n because some field is empty or wrong and duplicate name ! ";
             }          
         }
 
@@ -144,9 +145,9 @@ namespace membership_system
             intakeCodeTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
 
             // register primary key once the row is clicked. 
-            Member member = new Member();
-            member.setName(studentNameTextbox.Text);
-            studentID = member.getMemberID(member.getName());
+            Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text, studentGenderCombobox.Text, intakeCodeTextbox.Text);
+            studentID = member.getMemberID();
+
         }
 
         // display data in datagridview base on query
@@ -196,7 +197,7 @@ namespace membership_system
             if (insertStudentData)
             {
 
-                Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
+                Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
 
                 // get club id for register table 
@@ -243,7 +244,7 @@ namespace membership_system
             if (insertStudentData)
             {
 
-                Member member = new Member(studentNameTextbox.Text, Convert.ToInt32(studenthpTextbox.Text), studentEmailTextbox.Text,
+                Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text,
                     studentGenderCombobox.Text, intakeCodeTextbox.Text);
 
                 SqlConn connect = new SqlConn();
