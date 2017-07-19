@@ -145,9 +145,14 @@ namespace membership_system
             studentGenderCombobox.Text = memberGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
             intakeCodeTextbox.Text = memberGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-            // register primary key once the row is clicked. 
-            Member member = new Member(studentNameTextbox.Text, Convert.ToInt64(studenthpTextbox.Text), studentEmailTextbox.Text, studentGenderCombobox.Text, intakeCodeTextbox.Text);
+            // register primary key once the row is clicked.
+            Member member = new Member(); 
             studentID = member.getMemberID();
+            member.setName(studentNameTextbox.Text);
+            member.setHP(Convert.ToInt64(studenthpTextbox.Text));
+            member.setEmail(studentEmailTextbox.Text);
+            member.setGender(studentGenderCombobox.Text);
+            member.setIntakeCode(intakeCodeTextbox.Text);
 
             addButton.Visible = false;
 
@@ -239,6 +244,8 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "UPDATE action is INVALID \n because some field is empty or wrong ! ";
             }
+
+            addButton.Visible = true;
 
         }
 

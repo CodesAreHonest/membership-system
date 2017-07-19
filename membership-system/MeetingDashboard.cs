@@ -331,6 +331,8 @@ namespace membership_system
                 messageText.ForeColor = System.Drawing.Color.Red;
                 messageText.Text = "UPDATE action is INVALID \n because some field is empty or wrong ! ";
             }
+
+            addButton.Visible = true;
         }
 
         private void meetingGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

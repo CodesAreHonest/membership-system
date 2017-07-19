@@ -31,6 +31,26 @@ namespace membership_system
             this.name = name;
         }
 
+        public void setHP(long handphone)
+        {
+            this.handphone = handphone;
+        }
+
+        public void setEmail(string email)
+        {
+            this.email = email;
+        }
+
+        public void setGender(string gender)
+        {
+            this.gender = gender;
+        }
+
+        public void setIntakeCode(string intakecode)
+        {
+            this.intakecode = intakecode;
+        }
+
         public string getName()
         {
             return name;
