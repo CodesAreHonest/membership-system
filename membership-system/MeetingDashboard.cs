@@ -86,6 +86,7 @@ namespace membership_system
             endTimePicker.Text = DateTime.Now.ToString();
             durationLabel.Text = "0 day 0 hour 0 minute 0 second";
             descriptionTextbox.Text = "";
+
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -210,7 +211,7 @@ namespace membership_system
                     + "', meeting_starttime = '" + m.getStartTime()
                     + "', meeting_endtime = '" + m.getEndTime()
                     + "', meeting_duration = " + m.getDuration() +
-                    "where meeting_id = " + m.getMeetingID() + "and club_id = " + club.getClubIDFromPresident(session);
+                    "where meeting_id = " + meetingID + " and club_id = " + club.getClubIDFromPresident(session);
 
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
@@ -244,8 +245,12 @@ namespace membership_system
 
             Meeting m = new Meeting(session);
             m.setName(nameTextbox.Text);
-
+            m.setDescription(descriptionTextbox.Text);
+            m.setLocation(locationTextbox.Text);
+            m.setStartTime(datePicker.Value, startTimePicker.Value);
+            m.setEndTime(datePicker.Value, endTimePicker.Value);
             meetingID = m.getMeetingID();
+
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -267,7 +272,7 @@ namespace membership_system
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "delete dbo.meeting where meeting_id = " + m.getMeetingID() + " and club_id = " + club.getClubIDFromPresident(session);
+                command.CommandText = "delete dbo.meeting where meeting_id = " + meetingID + " and club_id = " + club.getClubIDFromPresident(session);
 
                 SqlDataReader reader = command.ExecuteReader();
                 reader.Close();
