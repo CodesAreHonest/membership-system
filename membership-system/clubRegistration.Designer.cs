@@ -111,6 +111,7 @@
             this.societyFeesTextbox.Name = "societyFeesTextbox";
             this.societyFeesTextbox.Size = new System.Drawing.Size(297, 24);
             this.societyFeesTextbox.TabIndex = 7;
+            this.societyFeesTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.societyFeesTextbox_KeyPress);
             // 
             // societyNameTextbox
             // 
