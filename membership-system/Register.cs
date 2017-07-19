@@ -84,7 +84,7 @@ namespace membership_system
         {
             if (string.IsNullOrWhiteSpace(nameTextbox.Text) || string.IsNullOrWhiteSpace(emailTextbox.Text) || 
                 string.IsNullOrWhiteSpace(genderCombobox.Text) || string.IsNullOrWhiteSpace(pwTextbox.Text) || 
-                string.IsNullOrWhiteSpace(retypepwTextbox.Text))
+                string.IsNullOrWhiteSpace(retypepwTextbox.Text) || string.IsNullOrWhiteSpace(posCombobox.Text))
             {
                 insertPresidentData = false;
                 MessageBox.Show("Please fill all the field in order to create account! ");
