@@ -24,6 +24,7 @@ namespace membership_system
             InitializeComponent();            
             this.session = session;
             headerDisplay();
+            studenthpTextbox.MaxLength = 12;
         }
 
         // To ensure all the field are not empty when add student 
