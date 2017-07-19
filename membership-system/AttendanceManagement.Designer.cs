@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.registerStrip = new System.Windows.Forms.ToolStrip();
             this.welcomeMessage = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -98,6 +98,7 @@
             // 
             // meetingCombobox
             // 
+            this.meetingCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.meetingCombobox.FormattingEnabled = true;
             this.meetingCombobox.Location = new System.Drawing.Point(175, 50);
             this.meetingCombobox.Name = "meetingCombobox";
@@ -135,8 +136,8 @@
             this.attendanceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.attendanceList.Location = new System.Drawing.Point(176, 133);
             this.attendanceList.Name = "attendanceList";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.attendanceList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.attendanceList.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.attendanceList.RowTemplate.Height = 24;
             this.attendanceList.Size = new System.Drawing.Size(760, 485);
             this.attendanceList.TabIndex = 26;
@@ -197,8 +198,8 @@
             this.attendanceList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.attendanceList1.Location = new System.Drawing.Point(180, 131);
             this.attendanceList1.Name = "attendanceList1";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.attendanceList1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.attendanceList1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.attendanceList1.RowTemplate.Height = 24;
             this.attendanceList1.Size = new System.Drawing.Size(760, 553);
             this.attendanceList1.TabIndex = 27;

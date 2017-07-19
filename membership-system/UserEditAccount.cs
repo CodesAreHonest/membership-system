@@ -20,6 +20,7 @@ namespace membership_system
             this.session = session;
             pwTextbox.PasswordChar = '*';
             openView();
+            genderCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void openEdit()
@@ -50,6 +51,10 @@ namespace membership_system
                 reader.Close();
                 connect.close();
 
+                // register updated name for session on data retrieval 
+                p.setPresidentName(updateNameTextbox.Text);
+                this.session = p.getPresidentName();
+
                 MessageBox.Show("Your account details had update successfully! ");
                 openView();
 
@@ -58,8 +63,9 @@ namespace membership_system
             {
                 MessageBox.Show("error" + ex);
             }
-            loadPresidentData();
+            
             openView();
+            loadPresidentData();
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -86,7 +92,7 @@ namespace membership_system
                 connect.open();
                 SqlCommand command = new SqlCommand();
                 command.Connection = connect.sqlConnection;
-                command.CommandText = "select * from dbo.President where president_name = '" + session + "'";
+                command.CommandText = "select * from dbo.President where president_id = " + p.getPresidentID(session);
                 SqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -108,6 +114,7 @@ namespace membership_system
                     pwTextbox.Text = pred.getPresidentPassword();
                     genderCombobox.Text = pred.getPresidentGender();
                     updateEmailTextbox.Text = pred.getPresidentEmail();
+
 
                     // close connection
                     connect.close();

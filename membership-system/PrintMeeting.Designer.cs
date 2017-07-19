@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintMeeting));
             this.registerStrip = new System.Windows.Forms.ToolStrip();
             this.registerStripLabel = new System.Windows.Forms.ToolStripLabel();
@@ -97,6 +97,7 @@
             // 
             // meetingNameComboBox
             // 
+            this.meetingNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.meetingNameComboBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.meetingNameComboBox.FormattingEnabled = true;
             this.meetingNameComboBox.Location = new System.Drawing.Point(360, 72);
@@ -283,8 +284,8 @@
             this.meetingGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.meetingGridView.Location = new System.Drawing.Point(135, 218);
             this.meetingGridView.Name = "meetingGridView";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.meetingGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.meetingGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.meetingGridView.RowTemplate.Height = 24;
             this.meetingGridView.Size = new System.Drawing.Size(875, 365);
             this.meetingGridView.TabIndex = 11;

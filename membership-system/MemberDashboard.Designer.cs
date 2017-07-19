@@ -199,6 +199,7 @@
             // 
             // studentGenderCombobox
             // 
+            this.studentGenderCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.studentGenderCombobox.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.studentGenderCombobox.FormattingEnabled = true;
             this.studentGenderCombobox.Items.AddRange(new object[] {
@@ -208,7 +209,6 @@
             this.studentGenderCombobox.Name = "studentGenderCombobox";
             this.studentGenderCombobox.Size = new System.Drawing.Size(297, 27);
             this.studentGenderCombobox.TabIndex = 12;
-            this.studentGenderCombobox.Text = "Male";
             // 
             // studentEmailTextbox
             // 

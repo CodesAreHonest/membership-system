@@ -183,6 +183,7 @@
             // 
             // posCombobox
             // 
+            this.posCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.posCombobox.FormattingEnabled = true;
             this.posCombobox.Location = new System.Drawing.Point(710, 50);
             this.posCombobox.Name = "posCombobox";
