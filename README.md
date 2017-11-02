@@ -1,7 +1,7 @@
 Students Society Membership System
 ===================================
 
-> The system allows president in society to **manage member information, meeting schedule, society fees and take attendance.**
+> The system allows user to **manage member information, meeting schedule, society fees and take attendance.**
 
 Table of contents
 =================
