@@ -3,6 +3,8 @@ Students Society Membership System
 
 > The system allows user to **manage member information, meeting schedule, society fees and take attendance.**
 
+***
+
 Table of contents
 =================
 
@@ -16,6 +18,8 @@ Table of contents
     * [Contributor](#contributor)
     * [Status](#status)
 
+***  
+
 Infrastructure Setup and Installation 
 =====================================
 1. Clone the sourcecode with git: 
@@ -23,7 +27,9 @@ Infrastructure Setup and Installation
 $ git clone https://github.com/CodesAreHonest/membership-system.git
 ```  
 2. Ensure Visual Studio Community 2015 IDE and MySQL Database is downloaded. 
-3. Launch the executable under membership-system/bin/Debug/
+3. Launch the executable under membership-system/bin/Debug/  
+
+***  
 
 Highlight
 =========
@@ -68,6 +74,8 @@ Features
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1 Record attendance with existing name list of specific society  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.2 Edit attendance  
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.3 Generate attendance report on specific meeting.  
+    
+***  
     
 About 
 ===== 
